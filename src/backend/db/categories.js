@@ -1,5 +1,11 @@
 import { v4 as uuid } from "uuid";
-
+import {
+  AdventureCatg,
+  HorrorCatg,
+  ActionCatg,
+  SimulationCatg,
+  WalkthroughCatg,
+} from "assets";
 /**
  * Category Database can be added here.
  * You can add category of your wish with different attributes
@@ -8,20 +14,37 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "Computer Programming",
+    categoryName: "Adventure",
+    categoryImg: AdventureCatg,
     description:
-      "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing",
+      "Adventure games include open world adventures throughout different genres and time periods",
   },
   {
     _id: uuid(),
-    categoryName: "Frontend Development",
+    categoryName: "Horror",
+    categoryImg: HorrorCatg,
     description:
-      "Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application",
+      "Horror games include a variety of scary and bone chilling video games",
   },
   {
     _id: uuid(),
-    categoryName: "Backend Development",
+    categoryName: "Action",
+    categoryImg: ActionCatg,
     description:
-      "Backend Development is also known as server-side development. It is everything that the users don't see and contains behind-the-scenes activities that occur when performing any action on a website.",
+      "Action games include thrilling real world based type games where missions need to be completed",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Simulation",
+    categoryImg: SimulationCatg,
+    description:
+      "Simulation games include games with option of role playing and controlling the players and their lives",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Walkthrough",
+    categoryImg: WalkthroughCatg,
+    description:
+      "Walkthrough includes helpuful tips and walkthroughs to complete missions and quests",
   },
 ];

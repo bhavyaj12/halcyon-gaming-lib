@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ThemeProvider } from "./contexts/theme-context";
+import { BrowserRouter as Router } from "react-router-dom";
+import { ThemeProvider, CategoryProvider } from "contexts";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
@@ -10,9 +11,13 @@ makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider>
+        <CategoryProvider>
+          <App />
+        </CategoryProvider>
+      </ThemeProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
