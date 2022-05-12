@@ -1,0 +1,20 @@
+.carousel-show {
+    max-height: 80vh;
+}
+
+#legend{
+    opacity: 1;
+    background-color:transparent;
+    position: absolute;
+    bottom: 3.5rem;
+    left: 2rem;
+    width: fit-content;
+    margin-left: 0;
+    font-size: inherit;
+}
+
+.legend .button {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--vid-cta-color);
+}
