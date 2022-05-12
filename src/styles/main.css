@@ -7,6 +7,7 @@
     min-height: 100vh;
     background-color: var(--theme-dark-bg);
     color: var(--theme-dark-font);
+    font-family: 'Roboto', sans-serif;
 }
 
 .App.light {
