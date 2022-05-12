@@ -1,5 +1,6 @@
-import { NavigationTop } from "components";
-import { useTheme } from "contexts/theme-context";
+import { NavigationTop, Footer } from "components";
+import { useTheme } from "contexts";
+import { Routes } from "routes";
 import "styles/main.css";
 import "App.css";
 
@@ -8,9 +9,8 @@ function App() {
   return (
     <div className={`App ${theme}`}>
       <NavigationTop />
-      <div className="page-container">
-        <h1>Hello</h1>
-      </div>
+      <Routes />
+      <Footer />
     </div>
   );
 }
