@@ -18,21 +18,21 @@ const HomePage = () => {
           <h3 className="home-heading pt-8">Unlock the power</h3>
           <h3 className="home-heading pt-8">And game like never before</h3>
         </div>
-        <div class="grid-col-3">
-          <div class="grid-col-item">
+        <div className="grid-col-3">
+          <div className="grid-col-item">
             <YouTubeIcon sx={{ fontSize: "80px" }} />
             <p className="txt-normal my-3">
               Access multiple videos, walkthroughs and more in one place
             </p>
           </div>
-          <div class="grid-col-item">
+          <div className="grid-col-item">
             <SubscriptionsIcon sx={{ fontSize: "80px" }} />
             <p className="txt-normal my-3">
               Manage your videos and keep track of all them using Watch Later and new created playlists
             </p>
           </div>
-          <div class="grid-col-item">
-              <div class="col-text">
+          <div className="grid-col-item">
+              <div className="col-text">
                 <ThumbUpIcon sx={{ fontSize: "80px" }} />
                 <p className="txt-normal my-3">
                   Like, unlike options in videos to track them using liked videos in one place 
