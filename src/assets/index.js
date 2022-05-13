@@ -7,4 +7,6 @@ import ActionCatg from "assets/images/game-catg-3.jpg"
 import SimulationCatg from "assets/images/game-catg-4.jpg"
 import WalkthroughCatg from "assets/images/game-catg-5.jpg"
 
-export { darkLogo, lightLogo, AdventureCatg, HorrorCatg, ActionCatg, SimulationCatg, WalkthroughCatg };
+import image404 from "assets/images/image-404.svg";
+
+export { darkLogo, lightLogo, AdventureCatg, HorrorCatg, ActionCatg, SimulationCatg, WalkthroughCatg, image404 };
