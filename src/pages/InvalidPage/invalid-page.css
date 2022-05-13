@@ -1,0 +1,11 @@
+.image-404-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.error-404-img {
+    margin: 0 auto;
+    width: 50%;
+}

@@ -1,0 +1,26 @@
+:root {
+    --search-bg: #f2f2f2;
+    --search-border: #949292;
+    --nav-bg: #e174f1;
+    --logout-btn: #dc3545;
+    --error-msg: #FF0000;
+
+    --theme-light-bg: #EFEFEF;
+    --theme-light-nav-bg: #9a37a9;
+    --theme-light-hamburger-bg: #e4beea;
+    --theme-light-footer: #432c47;
+    --theme-dark-bg: #353136;
+    --theme-dark-nav-bg: #111111;
+    --theme-dark-hamburger-bg: #5c555e;
+
+    --theme-light-font: #353136;
+    --theme-dark-font: #EFEFEF;
+    --theme-light-nav-font: #FFFFFF;
+
+    --vid-cta-color: #7b2c87;
+    --vid-secondary-color: #af80b7; 
+    --vid-secondary-light: #e4d4e7;
+    --vid-light-grey: #d7d7d7;
+    
+    font-size: 80%;
+}
