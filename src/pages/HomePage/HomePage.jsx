@@ -13,7 +13,7 @@ const HomePage = () => {
         <h3 className="h3 pt-8">Categories</h3>
       </div>
       <CategoryList />
-      <section className="video-home-grid mt-8">
+      <section className="video-home-grid my-8">
         <div className="container-center flex-col mb-5">
           <h3 className="home-heading pt-8">Unlock the power</h3>
           <h3 className="home-heading pt-8">And game like never before</h3>

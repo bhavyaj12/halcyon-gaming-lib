@@ -4,18 +4,27 @@
 @import url(./root.css);
 
 .App {
-    min-height: 100vh;
-    background-color: var(--theme-dark-bg);
-    color: var(--theme-dark-font);
-    font-family: 'Roboto', sans-serif;
+  min-height: calc(100vh + 200px);
+  background-color: var(--theme-dark-bg);
+  color: var(--theme-dark-font);
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
 }
 
 .App.light {
-    background-color: var(--theme-light-bg);
-    color: var(--theme-light-font);
+  background-color: var(--theme-light-bg);
+  color: var(--theme-light-font);
 }
 
 .App.dark {
-    background-color: var(--theme-dark-bg);
-    color: var(--theme-dark-font);
+  background-color: var(--theme-dark-bg);
+  color: var(--theme-dark-font);
+}
+
+@media screen and (max-width: 750px) {
+    .App {
+        min-height: 100vh;
+    }
 }
