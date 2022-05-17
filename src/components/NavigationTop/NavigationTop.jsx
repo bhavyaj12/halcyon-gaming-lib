@@ -1,12 +1,28 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { DarkMode, LightMode, Menu } from "@mui/icons-material";
 import { darkLogo, lightLogo } from "assets";
-import { useTheme } from "contexts/theme-context";
+import { useTheme, useAuth } from "contexts";
+import { useToast } from "custom-hooks";
+import { getActiveStyle } from "utilities";
 import "./navigation-top.css";
 
 const NavigationTop = () => {
   const { theme, setTheme } = useTheme();
+  const { auth, setAuth } = useAuth();
+  const { showToast } = useToast();
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
+  const signOutFunc = () => {
+    localStorage.removeItem("AUTH_TOKEN");
+    localStorage.removeItem("user");
+    setAuth({
+      isAuth: false,
+      token: null,
+      user: {},
+    });
+    showToast("success", "Logged out.");
+  };
 
   const changeTheme = () =>
     setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
@@ -19,11 +35,13 @@ const NavigationTop = () => {
     <header id="header">
       <nav className="store-nav-bar">
         <div className="store-logo-box">
-          {theme === "dark" ? (
-            <img src={darkLogo} alt="logo" className="store-logo" />
-          ) : (
-            <img src={lightLogo} alt="logo" className="store-logo" />
-          )}
+          <NavLink to="/">
+            {theme === "dark" ? (
+              <img src={darkLogo} alt="logo" className="store-logo" />
+            ) : (
+              <img src={lightLogo} alt="logo" className="store-logo" />
+            )}
+          </NavLink>
         </div>
         <button
           className="video-hamburger-btn"
@@ -44,23 +62,45 @@ const NavigationTop = () => {
               </label>
             </li>
             <li>
-              <a href="/" className="button button-primary button-link active">
+              <NavLink
+                to="/" style={getActiveStyle}
+                className="button button-primary button-link active"
+              >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/" className="button button-primary button-link">
+              <NavLink to="/" className="button button-primary button-link">
                 Explore
-              </a>
+              </NavLink>
             </li>
-            <li>
-              <a href="/" className="button button-primary button-link">
-                <i className="fas fa-user"></i>Account
-              </a>
-            </li>
+
+            {auth.isAuth === true ? (
+              <>
+                <li>
+                  <NavLink to="/" className="button button-primary button-link">
+                    <i className="fas fa-user"></i>Account
+                  </NavLink>
+                </li>
+                <li>
+                  <button
+                    className="btn btn-logout"
+                    onClick={() => signOutFunc(setAuth)}
+                  >
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <NavLink to="/login" style={getActiveStyle} className="button button-primary button-link">
+                  <i className="fas fa-user"></i>Login
+                </NavLink>
+              </li>
+            )}
+
             <li>
               <button
-                href="/"
                 className="button button-primary button-link theme-btn"
                 onClick={changeTheme}
               >
