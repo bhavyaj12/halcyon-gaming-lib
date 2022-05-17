@@ -3,7 +3,8 @@
     --search-border: #949292;
     --nav-bg: #e174f1;
     --logout-btn: #dc3545;
-    --error-msg: #FF0000;
+    --error-msg: #B32626;
+    --theme-dark-error-msg: #511515;
 
     --theme-light-bg: #EFEFEF;
     --theme-light-nav-bg: #9a37a9;
@@ -21,6 +22,8 @@
     --vid-secondary-color: #af80b7; 
     --vid-secondary-light: #e4d4e7;
     --vid-light-grey: #d7d7d7;
+    --vid-dark-grey: #969696;
+
     
     font-size: 80%;
 }
