@@ -2,7 +2,6 @@ import { HomeCarousel, CategoryList } from "components";
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import "styles/main.css";
 import "./home-page.css";
 
 const HomePage = () => {

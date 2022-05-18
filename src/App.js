@@ -1,4 +1,4 @@
-import { NavigationTop, Footer } from "components";
+import { NavigationTop, Footer, Toast } from "components";
 import { useTheme } from "contexts";
 import { Routes } from "routes";
 import "styles/main.css";
@@ -9,6 +9,7 @@ function App() {
   return (
     <div className={`App ${theme}`}>
       <NavigationTop />
+      <Toast />
       <Routes />
       <Footer />
     </div>
