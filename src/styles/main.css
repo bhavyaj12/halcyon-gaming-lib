@@ -4,6 +4,7 @@
 @import url(./root.css);
 
 .App {
+  width: 100%;
   min-height: calc(100vh + 200px);
   background-color: var(--theme-dark-bg);
   color: var(--theme-dark-font);
@@ -11,6 +12,7 @@
   position: relative;
   margin: 0;
   padding-bottom: 6rem;
+  overflow: hidden auto;
 }
 
 .App.light {
@@ -23,8 +25,26 @@
   color: var(--theme-dark-font);
 }
 
+.video-main-content {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 200px 1fr;
+  margin-bottom: 8rem;
+}
+
 @media screen and (max-width: 750px) {
-    .App {
-        min-height: 100vh;
-    }
+  .App {
+    min-height: 100vh;
+  }
+
+  .video-main-content {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 0px 1fr;
+    margin-bottom: 5rem;
+  }
+
+  #video-main {
+    width: 100%;
+  }
 }
