@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import { ThemeProvider, CategoryProvider, AuthProvider } from "contexts";
-import "./index.css";
+import {
+  ThemeProvider,
+  CategoryProvider,
+  AuthProvider,
+  VideosProvider,
+} from "contexts";
 import App from "./App";
 import { makeServer } from "./server";
 
@@ -15,7 +19,9 @@ ReactDOM.render(
       <ThemeProvider>
         <AuthProvider>
           <CategoryProvider>
-            <App />
+            <VideosProvider>
+              <App />
+            </VideosProvider>
           </CategoryProvider>
         </AuthProvider>
       </ThemeProvider>
