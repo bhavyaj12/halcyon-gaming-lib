@@ -1,0 +1,34 @@
+.video-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 1rem 2rem;
+  grid-column-gap: var(--size-0-5);
+  grid-row-gap: var(--size-1);
+  margin: auto;
+}
+
+.video-container .alert-container .alert-error {
+  max-width: 30%;
+}
+
+.video-main-content p.alert.alert-container.alert-primary.txt-normal {
+  width: 60%;
+}
+
+.App.dark .video-main-content p.alert.alert-container.alert-primary.txt-normal {
+  background-color: var(--vid-secondary-color);
+}
+
+.App.dark div.button.button-primary.btn-outline {
+  color: var(--category-chips);
+  border-color: var(--category-chips);
+  border-radius: 0.5rem;
+}
+
+.App.light div.button.button-primary.btn-outline {
+  color: var(--vid-cta-color);
+  border-color: var(--vid-cta-color);
+  border-radius: 0.5rem;
+}
+
+
