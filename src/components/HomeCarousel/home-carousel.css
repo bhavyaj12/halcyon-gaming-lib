@@ -16,5 +16,5 @@
 .legend .button {
     position: absolute;
     bottom: 0;
-    background-color: var(--vid-cta-color);
+    background-color: var(--video-cta-color);
 }

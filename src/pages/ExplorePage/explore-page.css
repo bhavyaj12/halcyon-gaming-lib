@@ -16,7 +16,7 @@
 }
 
 .App.dark .video-main-content p.alert.alert-container.alert-primary.txt-normal {
-  background-color: var(--vid-secondary-color);
+  background-color: var(--video-secondary-color);
 }
 
 .App.dark div.button.button-primary.btn-outline {
@@ -26,8 +26,8 @@
 }
 
 .App.light div.button.button-primary.btn-outline {
-  color: var(--vid-cta-color);
-  border-color: var(--vid-cta-color);
+  color: var(--video-cta-color);
+  border-color: var(--video-cta-color);
   border-radius: 0.5rem;
 }
 

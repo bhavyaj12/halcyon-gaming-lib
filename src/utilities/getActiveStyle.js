@@ -1,6 +1,6 @@
 const getActiveStyle = ({ isActive }) => ({
-    color: isActive ? "var(--vid-light-grey)" : "",
-    borderBottom: isActive ? "1px solid var(--vid-light-grey)" : "",
+    color: isActive ? "var(--video-dark-grey)" : "",
+    borderBottom: isActive ? "2px solid var(--video-dark-grey)" : "",
 });
 
 export { getActiveStyle };  

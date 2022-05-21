@@ -8,7 +8,7 @@
 
 .App.dark .form-container {
   box-shadow: none;
-  background-color: var(--vid-dark-grey);
+  background-color: var(--video-dark-grey);
   color: var(--theme-dark-nav-bg);
 }
 
@@ -20,7 +20,7 @@
 
 .form-container .input-field {
   font-size: 1.1rem;
-  border: 1px solid var(--vid-cta-color);
+  border: 1px solid var(--video-cta-color);
 }
 
 .form-container .input-field:focus {
@@ -29,28 +29,28 @@
 
 .input-required:after {
   content: " *";
-  color: var(--vid-cta-color);
+  color: var(--video-cta-color);
 }
 
 .form-container .button.button-primary.button-link.create-acc-btn {
   color: var(--font-color);
-  text-decoration-color: var(--vid-cta-color);
+  text-decoration-color: var(--video-cta-color);
 }
 
 .button.button-primary.btn-solid.login-btn {
-  background-color: var(--vid-cta-color);
+  background-color: var(--video-cta-color);
   width: 100%;
   margin: 1.25rem auto;
 }
 
 .form-container .button.button-secondary.btn-outline {
-  border-color: var(--vid-cta-color);
+  border-color: var(--video-cta-color);
 }
 
 .form-container .button.button-primary.button-link {
   background-color: transparent;
   border: none;
-  color: var(--vid-cta-color);
+  color: var(--video-cta-color);
 }
 
 .hide-pswrd {
@@ -97,7 +97,7 @@
   font-size: var(--size-1);
   margin: 0;
   padding: 0;
-  color: var(--vid-cta-color);
+  color: var(--video-cta-color);
   text-decoration: none;
 }
 

@@ -13,11 +13,11 @@
 }
 
 .App.dark .sidebar {
-    background-color: var(--vid-dark-grey);
+    background-color: var(--video-dark-grey);
 }
 
 .App.light .sidebar {
-    background-color: var(--vid-secondary-light);
+    background-color: var(--video-secondary-light);
 }
 
 .sidebar a {
@@ -32,12 +32,12 @@
 
 .App.dark .sidebar a:hover {
   background-color: var(--theme-light-font);
-  color: var(--vid-secondary-light);
+  color: var(--video-secondary-light);
   transition: 200ms ease;
 } 
 
 .App.light .sidebar a:hover {
-    background-color: var(--vid-secondary-color);
+    background-color: var(--video-secondary-color);
     color: var(--font-color);
     transition: 200ms ease;
   } 

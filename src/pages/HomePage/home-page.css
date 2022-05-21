@@ -13,7 +13,7 @@
 }
 
 .App.light .video-home-grid {
-    background-color: var(--vid-light-grey);
+    background-color: var(--video-light-grey);
 }
 
 .grid-col-3 {

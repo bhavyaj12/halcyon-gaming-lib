@@ -107,9 +107,9 @@
 }
 
 .App.light .store-nav-bar .store-nav .store-nav-links li .btn.btn-logout {
-  background-color: var(--vid-secondary-light);
+  background-color: var(--video-secondary-light);
   color: var(--logout-btn);
-  border: 1px solid var(--vid-dark-grey);
+  border: 1px solid var(--video-dark-grey);
 }
 
 .store-nav-bar .store-nav .store-nav-links li .btn.btn-logout {
@@ -130,11 +130,11 @@
 }
 
 .store-nav-bar .store-nav .store-nav-links li .button.button-link:hover {
-  color: var(--vid-cta-color);
+  color: var(--video-cta-color);
 }
 
 .store-nav-bar .store-nav .store-nav-links li .badge .fas:hover {
-  color: var(--vid-cta-color);
+  color: var(--video-cta-color);
   transition: 0.4s ease;
 }
 
@@ -240,6 +240,6 @@
   }
 
   .navigation-menu li:hover {
-    background-color: var(--vid-cta-color);
+    background-color: var(--video-cta-color);
   }
 }

@@ -18,11 +18,11 @@
     --theme-dark-font: #EFEFEF;
     --theme-light-nav-font: #FFFFFF;
 
-    --vid-cta-color: #7b2c87;
-    --vid-secondary-color: #af80b7; 
-    --vid-secondary-light: #e4d4e7;
-    --vid-light-grey: #d7d7d7;
-    --vid-dark-grey: #969696;
+    --video-cta-color: #7b2c87;
+    --video-secondary-color: #af80b7; 
+    --video-secondary-light: #e4d4e7;
+    --video-light-grey: #d7d7d7;
+    --video-dark-grey: #969696;
     --theme-dark-video-card: #5d5a5e;
     --category-chips: #E9D6FF;
 

@@ -47,7 +47,7 @@
   padding: 0.4rem;
   opacity: 0.9;
   border-radius: 0.2rem;
-  background-color: var(--vid-secondary-color);
+  background-color: var(--video-secondary-color);
   color: var(--white-bg);
   margin: 0;
 }
@@ -78,7 +78,7 @@
 }
 
 .drop-down {
-  background-color: var(--vid-secondary-light);
+  background-color: var(--video-secondary-light);
   position: absolute;
   top: 95%;
   right: 0%;
