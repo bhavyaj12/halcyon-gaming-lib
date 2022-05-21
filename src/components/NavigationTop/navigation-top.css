@@ -175,7 +175,11 @@
   color: var(--theme-light-font);
 }
 
-@media screen and (max-width: 768px) {
+.store-nav ul.store-nav-links .sidebar-links {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
   .video-hamburger-btn {
     display: block;
   }
@@ -185,6 +189,10 @@
   }
 
   .store-nav.hamburger-open ul.store-nav-links {
+    display: block;
+  }
+
+  .store-nav.hamburger-open ul.store-nav-links .sidebar-links {
     display: block;
   }
 

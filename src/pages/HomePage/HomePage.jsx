@@ -21,20 +21,20 @@ const HomePage = () => {
           <div className="grid-col-item">
             <YouTubeIcon sx={{ fontSize: "80px" }} />
             <p className="txt-normal my-3">
-              Access multiple videos, walkthroughs and more in one place
+              Access a wide genre of gaming videos, walkthroughs and more in one place
             </p>
           </div>
           <div className="grid-col-item">
             <SubscriptionsIcon sx={{ fontSize: "80px" }} />
             <p className="txt-normal my-3">
-              Manage your videos and keep track of all them using Watch Later and new created playlists
+              Manage your videos, keep track of them using Watch Later and new created playlists
             </p>
           </div>
           <div className="grid-col-item">
               <div className="col-text">
                 <ThumbUpIcon sx={{ fontSize: "80px" }} />
                 <p className="txt-normal my-3">
-                  Like, unlike options in videos to track them using liked videos in one place 
+                  Access your complete watch history and like videos to save to liked videos all in one go
                 </p>
               </div>
           </div>

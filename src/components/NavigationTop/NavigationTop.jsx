@@ -63,14 +63,15 @@ const NavigationTop = () => {
             </li>
             <li>
               <NavLink
-                to="/" style={getActiveStyle}
+                to="/"
+                style={getActiveStyle}
                 className="button button-primary button-link active"
               >
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" className="button button-primary button-link">
+              <NavLink to="/explore" style={getActiveStyle} className="button button-primary button-link">
                 Explore
               </NavLink>
             </li>
@@ -82,6 +83,40 @@ const NavigationTop = () => {
                     <i className="fas fa-user"></i>Account
                   </NavLink>
                 </li>
+                <div className="sidebar-links">
+                  <li>
+                    <NavLink
+                      to="/"
+                      className="button button-primary button-link"
+                    >
+                      Playlist
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/"
+                      className="button button-primary button-link"
+                    >
+                      Liked
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/"
+                      className="button button-primary button-link"
+                    >
+                      Watch Later
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/"
+                      className="button button-primary button-link"
+                    >
+                      History
+                    </NavLink>
+                  </li>
+                </div>
                 <li>
                   <button
                     className="btn btn-logout"
@@ -93,7 +128,11 @@ const NavigationTop = () => {
               </>
             ) : (
               <li>
-                <NavLink to="/login" style={getActiveStyle} className="button button-primary button-link">
+                <NavLink
+                  to="/login"
+                  style={getActiveStyle}
+                  className="button button-primary button-link"
+                >
                   <i className="fas fa-user"></i>Login
                 </NavLink>
               </li>

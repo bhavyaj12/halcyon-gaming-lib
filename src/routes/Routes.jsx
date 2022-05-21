@@ -6,6 +6,7 @@ import {
   LoginPage,
   SignupPage,
   HistoryPage,
+  ExplorePage,
 } from "pages";
 import PrivateRoutes from "./PrivateRoutes";
 import RedirectPage from "./RedirectPage";
@@ -20,8 +21,8 @@ const SiteRoutes = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
       </Route>
-      {/* <Route path="/explore" element={<Explore />} />
-      <Route path="/watch/:id" element={<Watch />} /> */}
+      <Route path="/explore" element={<ExplorePage />} />
+      {/* <Route path="/watch/:id" element={<Watch />} /> */}
       <Route element={<PrivateRoutes />}>
         <Route path="/history" element={<HistoryPage />} />
         {/* <Route path="/playlists" element={<PlaylistsPage />} />
