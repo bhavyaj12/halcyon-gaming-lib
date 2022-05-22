@@ -7,6 +7,7 @@ import "./explore-page.css";
 const ExplorePage = () => {
   const { videosState } = useVideos();
   const [loader, setLoader] = useState(true);
+
   setTimeout(() => {
     setLoader(videosState.videosLoading);
   }, 1500);

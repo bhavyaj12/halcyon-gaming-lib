@@ -1,12 +1,22 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import CloseIcon from "@mui/icons-material/Close";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { WatchLaterOutlined } from "@mui/icons-material";
+import { useToast } from "custom-hooks";
+import { useAuth, useUserData } from "contexts";
 import {
-  FavoriteBorderOutlined,
-  WatchLaterOutlined,
-} from "@mui/icons-material";
+  addToLiked,
+  removeFromLiked,
+  removeFromWatchLater,
+  addToWatchLater,
+  checkVideoInLiked,
+  checkVideoInWatchLater,
+} from "utilities";
 import "./video-card.css";
 
 const VideoCard = ({ video }) => {
@@ -20,7 +30,55 @@ const VideoCard = ({ video }) => {
     views,
     category,
   } = video;
+  const navigate = useNavigate();
   const [dropDown, setDropDown] = useState(false);
+  const {
+    auth: { isAuth, token },
+  } = useAuth();
+  const { showToast } = useToast();
+  const { userDataState, userDataDispatch } = useUserData();
+  console.log(userDataState);
+  const [isVideoLiked, setIsVideoLiked] = useState(
+    checkVideoInLiked(_id, userDataState.likedVideos)
+  );
+  const [isVideoInWatchLater, setIsVideoInWatchLater] = useState(
+    checkVideoInWatchLater(_id, userDataState.watchlater)
+  );
+
+  const likeClickHandler = (e) => {
+    e.preventDefault();
+
+    if (!isAuth) {
+      showToast("error", "Login to add the video to your liked videos.");
+      navigate("/login", { state: { from: "/explore" }, replace: true });
+    } else {
+      isVideoLiked
+        ? removeFromLiked(showToast, userDataDispatch, token, _id)
+        : addToLiked(showToast, userDataDispatch, token, video);
+    }
+  };
+
+  const watchLaterHandler = (e) => {
+    e.preventDefault();
+
+    if (!isAuth) {
+      showToast("error", "Login to add the video to watch later.");
+      navigate("/login", { state: { from: "/explore" }, replace: true });
+    } else {
+      isVideoInWatchLater
+        ? removeFromWatchLater(showToast, userDataDispatch, token, _id)
+        : addToWatchLater(showToast, userDataDispatch, token, video);
+    }
+  };
+
+  useEffect(() => {
+    if (isAuth) {
+      setIsVideoLiked(checkVideoInLiked(_id, userDataState.likedVideos));
+      setIsVideoInWatchLater(
+        checkVideoInWatchLater(_id, userDataState.watchlater)
+      );
+    }
+  }, [userDataState]);
 
   return (
     <div className="card card-vertical card-shadow" id={_id}>
@@ -60,24 +118,43 @@ const VideoCard = ({ video }) => {
           {dropDown && (
             <div className="flex-row p-3 drop-down">
               <div>
-                <button className="m-1">
-                  <span className="mx-2" >
-                    <WatchLaterOutlined />
-                  </span>
-                  Watch Later
-                </button>
+                {isVideoInWatchLater ? (
+                  <button className="m-1" onClick={watchLaterHandler}>
+                    <span className="mx-2">
+                      <CheckCircleIcon />
+                    </span>
+                    Remove from Watch Later
+                  </button>
+                ) : (
+                  <button className="m-1" onClick={watchLaterHandler}>
+                    <span className="mx-2">
+                      <WatchLaterOutlined />
+                    </span>
+                    Watch Later
+                  </button>
+                )}
+
                 <button className="m-1">
                   <span className="mx-2">
                     <PlaylistAddIcon />
                   </span>
                   Add to playlist
                 </button>
-                <button className="m-1">
-                  <span className="mx-2">
-                    <FavoriteBorderOutlined />
-                  </span>
-                  Add to Liked Videos
-                </button>
+                {isVideoLiked ? (
+                  <button className="m-1" onClick={likeClickHandler}>
+                    <span className="mx-2">
+                      <ThumbUpIcon />
+                    </span>
+                    Remove from Liked Videos
+                  </button>
+                ) : (
+                  <button className="m-1" onClick={likeClickHandler}>
+                    <span className="mx-2">
+                      <ThumbUpOutlinedIcon />
+                    </span>
+                    Add to Liked Videos
+                  </button>
+                )}
               </div>
               <button className="m-1" onClick={() => setDropDown(false)}>
                 <CloseIcon />

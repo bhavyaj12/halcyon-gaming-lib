@@ -6,6 +6,7 @@ import {
   CategoryProvider,
   AuthProvider,
   VideosProvider,
+  UserDataProvider,
 } from "contexts";
 import App from "./App";
 import { makeServer } from "./server";
@@ -20,7 +21,9 @@ ReactDOM.render(
         <AuthProvider>
           <CategoryProvider>
             <VideosProvider>
-              <App />
+              <UserDataProvider>
+                <App />
+              </UserDataProvider>
             </VideosProvider>
           </CategoryProvider>
         </AuthProvider>
