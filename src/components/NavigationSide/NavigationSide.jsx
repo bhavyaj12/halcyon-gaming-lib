@@ -15,8 +15,8 @@ const NavigationSide = () => {
       <div className="sidebar-links mt-8">
         <NavLink to="/explore" style={getActiveStyleSide}><ExploreOutlined />Explore</NavLink>
         <NavLink to="/" style={getActiveStyleSide}><VideoLibraryOutlined />Playlist</NavLink>
-        <NavLink to="/" style={getActiveStyleSide}><FavoriteBorderOutlined />Liked</NavLink>
-        <NavLink to="/" style={getActiveStyleSide}><WatchLaterOutlined />Watch Later</NavLink>
+        <NavLink to="/liked-videos" style={getActiveStyleSide}><FavoriteBorderOutlined />Liked</NavLink>
+        <NavLink to="/watch-later" style={getActiveStyleSide}><WatchLaterOutlined />Watch Later</NavLink>
         <NavLink to="/" style={getActiveStyleSide}><HistoryOutlined />History</NavLink>
       </div>
     </div>

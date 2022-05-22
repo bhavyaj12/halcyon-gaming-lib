@@ -8,7 +8,7 @@ const RedirectPage = () => {
   const location = useLocation();
   
   return isAuth ? (
-    <Navigate to="/history" state={{ from: location }} replace />
+    <Navigate to="/explore" state={{ from: location }} replace />
   ) : (
     <Outlet />
   );

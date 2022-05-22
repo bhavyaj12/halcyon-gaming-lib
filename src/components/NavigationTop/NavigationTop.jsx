@@ -94,7 +94,7 @@ const NavigationTop = () => {
                   </li>
                   <li>
                     <NavLink
-                      to="/"
+                      to="/liked-videos"
                       className="button button-primary button-link"
                     >
                       Liked
@@ -102,7 +102,7 @@ const NavigationTop = () => {
                   </li>
                   <li>
                     <NavLink
-                      to="/"
+                      to="/watch-later"
                       className="button button-primary button-link"
                     >
                       Watch Later
