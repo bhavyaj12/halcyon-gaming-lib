@@ -6,7 +6,7 @@ import { getActiveStyleSide } from "./getActiveStyleSide";
 import { fetchVideos } from "./services/fetchVideos";
 import { addToLiked, removeFromLiked } from "./services/videoLikeService";
 import { checkVideoInLiked } from "./checkVideoInLiked";
-import { getUserLiked, getUserWatchLater } from "./services/fetchUserData";
+import { getUserLiked, getUserWatchLater, getUserPlaylists } from "./services/fetchUserData";
 import {
   addToWatchLater,
   removeFromWatchLater,
@@ -37,5 +37,6 @@ export {
   addToPlaylist,
   removeFromPlaylist,
   addNewPlaylist,
-  deletePlaylist
+  deletePlaylist,
+  getUserPlaylists
 };

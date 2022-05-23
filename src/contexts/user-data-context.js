@@ -1,8 +1,8 @@
 import { createContext, useContext, useReducer, useEffect, useState } from "react";
 import { userDataReducer } from "reducers";
 import { useAuth } from "contexts";
-import { getUserLiked, getUserWatchLater } from "utilities";
-
+import { getUserLiked, getUserWatchLater, getUserPlaylists } from "utilities";
+ 
 const UserDataContext = createContext();
 
 const initUserData = {
@@ -27,6 +27,7 @@ const UserDataProvider = ({ children }) => {
     if (isAuth) {
       getUserLiked(token, userDataDispatch);
       getUserWatchLater(token, userDataDispatch);
+      getUserPlaylists(token, userDataDispatch);
     }
   }, [isAuth]);
 
