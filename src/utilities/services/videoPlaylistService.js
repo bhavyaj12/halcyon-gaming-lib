@@ -7,7 +7,6 @@ const addToPlaylist = async (
   playlistId,
   video
 ) => {
-  console.log("From addtoplaylist video", video);
   try {
     const {
       data: { playlist },
@@ -18,7 +17,6 @@ const addToPlaylist = async (
         headers: { authorization: token },
       }
     );
-    console.log("playlist", playlist);
     userDataDispatch({ type: "UPDATE_PLAYLIST", payload: playlist });
     showToast("success", "Added video to playlist.");
   } catch (error) {
@@ -40,7 +38,6 @@ const removeFromPlaylist = async (
     } = await axios.delete(`/api/user/playlists/${playlistId}/${videoId}`, {
       headers: { authorization: token },
     });
-    console.log("playlist after remove video", playlist);
     userDataDispatch({ type: "UPDATE_PLAYLIST", payload: playlist });
     showToast("success", "Removed video from playlist.");
   } catch (error) {
@@ -65,7 +62,6 @@ const addNewPlaylist = async (
         headers: { authorization: token },
       }
     );
-    console.log("playlist after new pl", playlists);
     userDataDispatch({ type: "SET_PLAYLISTS", payload: playlists });
     showToast("success", "Added new playlist.");
   } catch (error) {
@@ -89,7 +85,6 @@ const deletePlaylist = async (
         headers: { authorization: token },
       }
     );
-    console.log("playlist after deleting pl", playlists);
     userDataDispatch({ type: "SET_PLAYLISTS", payload: playlists });
     showToast("success", "Deleted playlist.");
   } catch (error) {

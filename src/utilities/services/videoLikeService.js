@@ -6,7 +6,6 @@ const addToLiked = async (
   token,
   video
 ) => {
-  console.log("From addtoliked");
   try {
     const {
       data: { likes },
@@ -17,7 +16,6 @@ const addToLiked = async (
         headers: { authorization: token },
       }
     );
-    console.log("Likes", likes);
     userDataDispatch({ type: "UPDATE_LIKED_VIDEOS", payload: likes });
     showToast("success", "Added to Liked Videos");
   } catch (error) {
@@ -41,7 +39,6 @@ const removeFromLiked = async (
           headers: { authorization: token },
         }
       );
-      console.log("Likes", likes);
       userDataDispatch({ type: "UPDATE_LIKED_VIDEOS", payload: likes });
       showToast("success", "Removed from Liked Videos");
     } catch (error) {

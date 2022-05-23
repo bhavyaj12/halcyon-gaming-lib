@@ -46,7 +46,6 @@ const PlaylistModal = ({ setTogglePlaylistModal }) => {
   };
 
   const PlayListItem = ({ playlist, videoId }) => {
-    console.log("in playlist item", playlist);
     const isVideoInPlaylist = playlist.videos.some(
       (vid) => vid._id === videoId
     );
