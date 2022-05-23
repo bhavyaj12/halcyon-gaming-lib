@@ -5,6 +5,7 @@
     flex-direction: column;
     padding: 4rem;
     gap: 2rem;
+    margin: 5rem 0;
 }
 
 .error-404-img {
