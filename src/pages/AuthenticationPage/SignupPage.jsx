@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "contexts";
 import { useToast } from "custom-hooks";
@@ -15,6 +15,7 @@ const SignupPage = () => {
   });
   const { setAuth } = useAuth();
   const { showToast } = useToast();
+  const navigate = useNavigate();
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPassVisible, setConfirmPassVisible] = useState(false);
   const [signupError, setSignupError] = useState("");
@@ -36,6 +37,7 @@ const SignupPage = () => {
           user: { ...userDetails },
         });
         showToast("success", "Signed up successfully and logged in.");
+        navigate("/explore", { replace: true });
       } else {
         throw new Error("Signup failed. Refresh and try again.");
       }
