@@ -9,6 +9,8 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { WatchLaterOutlined } from "@mui/icons-material";
 import { useToast } from "custom-hooks";
 import { useAuth, useUserData } from "contexts";
+import { PlaylistModal } from "components";
+
 import {
   addToLiked,
   removeFromLiked,
@@ -30,13 +32,14 @@ const VideoCard = ({ video }) => {
     views,
     category,
   } = video;
+
   const navigate = useNavigate();
   const [dropDown, setDropDown] = useState(false);
   const {
     auth: { isAuth, token },
   } = useAuth();
   const { showToast } = useToast();
-  const { userDataState, userDataDispatch } = useUserData();
+  const { userDataState, userDataDispatch, setCurrentVideo } = useUserData();
   console.log(userDataState);
   const [isVideoLiked, setIsVideoLiked] = useState(
     checkVideoInLiked(_id, userDataState.likedVideos)
@@ -44,6 +47,16 @@ const VideoCard = ({ video }) => {
   const [isVideoInWatchLater, setIsVideoInWatchLater] = useState(
     checkVideoInWatchLater(_id, userDataState.watchlater)
   );
+  const [togglePlaylistModal, setTogglePlaylistModal] = useState(false);
+
+  useEffect(() => {
+    if (isAuth) {
+      setIsVideoLiked(checkVideoInLiked(_id, userDataState.likedVideos));
+      setIsVideoInWatchLater(
+        checkVideoInWatchLater(_id, userDataState.watchlater)
+      );
+    }
+  }, [userDataState]);
 
   const likeClickHandler = (e) => {
     e.preventDefault();
@@ -71,99 +84,107 @@ const VideoCard = ({ video }) => {
     }
   };
 
-  useEffect(() => {
-    if (isAuth) {
-      setIsVideoLiked(checkVideoInLiked(_id, userDataState.likedVideos));
-      setIsVideoInWatchLater(
-        checkVideoInWatchLater(_id, userDataState.watchlater)
-      );
-    }
-  }, [userDataState]);
+  const playlistHandler = (e) => {
+    e.preventDefault();
+
+    if (!isAuth) {
+      showToast("error", "Login to add videos to playlists.");
+      navigate("/login", { state: { from: "/explore" }, replace: true });
+    } else setTogglePlaylistModal(true);
+  };
 
   return (
-    <div className="card card-vertical card-shadow" id={_id}>
-      <div className="p-3 img-badge-container">
-        <img
-          src={thumbnail}
-          alt="Video Thumbnail"
-          className="img-responsive vt-card-img"
-        />
-      </div>
-      <div className="vt-card-text">
-        <div className="video-card-head">
+    <>
+      {togglePlaylistModal ? (
+        <PlaylistModal setTogglePlaylistModal={setTogglePlaylistModal} />
+      ) : null}
+      <div className="card card-vertical card-shadow" id={_id}>
+        <div className="p-3 img-badge-container">
           <img
-            src={creatorAvatar}
-            alt="Small Avatar"
-            className="avatar avatar-sm"
+            src={thumbnail}
+            alt="Video Thumbnail"
+            className="img-responsive vt-card-img"
           />
-          <div className="px-2">
-            <h2>{title}</h2>
-            <p className="card-brand-name my-2">{creator}</p>
-            <span className="rating d-inline">
-              {views} views
-              <span className="text-small"> • {duration}</span>
+        </div>
+        <div className="vt-card-text">
+          <div className="video-card-head">
+            <img
+              src={creatorAvatar}
+              alt="Small Avatar"
+              className="avatar avatar-sm"
+            />
+            <div className="px-2">
+              <h2>{title}</h2>
+              <p className="card-brand-name my-2">{creator}</p>
+              <span className="rating d-inline">
+                {views} views
+                <span className="text-small"> • {duration}</span>
+              </span>
+            </div>
+          </div>
+          <div className="card-price">
+            <span className="alert-container alert-primary txt-small category-tag">
+              {category}
             </span>
+            <button
+              className="button btn-solid button-primary"
+              onClick={() => {
+                setDropDown(!dropDown);
+                setCurrentVideo(video);
+              }}
+            >
+              <MoreVertOutlinedIcon />
+            </button>
+            {dropDown && (
+              <div className="flex-row p-3 drop-down">
+                <div>
+                  {isVideoInWatchLater ? (
+                    <button className="m-1" onClick={watchLaterHandler}>
+                      <span className="mx-2">
+                        <CheckCircleIcon />
+                      </span>
+                      Remove from Watch Later
+                    </button>
+                  ) : (
+                    <button className="m-1" onClick={watchLaterHandler}>
+                      <span className="mx-2">
+                        <WatchLaterOutlined />
+                      </span>
+                      Watch Later
+                    </button>
+                  )}
+
+                  <button className="m-1" onClick={playlistHandler}>
+                    <span className="mx-2">
+                      <PlaylistAddIcon />
+                    </span>
+                    Add to playlist
+                  </button>
+                  {isVideoLiked ? (
+                    <button className="m-1" onClick={likeClickHandler}>
+                      <span className="mx-2">
+                        <ThumbUpIcon />
+                      </span>
+                      Remove from Liked Videos
+                    </button>
+                  ) : (
+                    <button className="m-1" onClick={likeClickHandler}>
+                      <span className="mx-2">
+                        <ThumbUpOutlinedIcon />
+                      </span>
+                      Add to Liked Videos
+                    </button>
+                  )}
+                </div>
+                <button className="m-1" onClick={() => setDropDown(false)}>
+                  <CloseIcon />
+                </button>
+              </div>
+            )}
           </div>
         </div>
-        <div className="card-price">
-          <span className="alert-container alert-primary txt-small category-tag">
-            {category}
-          </span>
-          <button
-            className="button btn-solid button-primary"
-            onClick={() => setDropDown(!dropDown)}
-          >
-            <MoreVertOutlinedIcon />
-          </button>
-          {dropDown && (
-            <div className="flex-row p-3 drop-down">
-              <div>
-                {isVideoInWatchLater ? (
-                  <button className="m-1" onClick={watchLaterHandler}>
-                    <span className="mx-2">
-                      <CheckCircleIcon />
-                    </span>
-                    Remove from Watch Later
-                  </button>
-                ) : (
-                  <button className="m-1" onClick={watchLaterHandler}>
-                    <span className="mx-2">
-                      <WatchLaterOutlined />
-                    </span>
-                    Watch Later
-                  </button>
-                )}
-
-                <button className="m-1">
-                  <span className="mx-2">
-                    <PlaylistAddIcon />
-                  </span>
-                  Add to playlist
-                </button>
-                {isVideoLiked ? (
-                  <button className="m-1" onClick={likeClickHandler}>
-                    <span className="mx-2">
-                      <ThumbUpIcon />
-                    </span>
-                    Remove from Liked Videos
-                  </button>
-                ) : (
-                  <button className="m-1" onClick={likeClickHandler}>
-                    <span className="mx-2">
-                      <ThumbUpOutlinedIcon />
-                    </span>
-                    Add to Liked Videos
-                  </button>
-                )}
-              </div>
-              <button className="m-1" onClick={() => setDropDown(false)}>
-                <CloseIcon />
-              </button>
-            </div>
-          )}
-        </div>
       </div>
-    </div>
+    </>
   );
 };
 
