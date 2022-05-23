@@ -1,8 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import CloseIcon from "@mui/icons-material/Close";
+import DeleteIcon from "@mui/icons-material/Delete";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -18,6 +19,7 @@ import {
   addToWatchLater,
   checkVideoInLiked,
   checkVideoInWatchLater,
+  removeFromHistory,
 } from "utilities";
 import "./video-card.css";
 
@@ -34,13 +36,13 @@ const VideoCard = ({ video }) => {
   } = video;
 
   const navigate = useNavigate();
+  let location = useLocation();
   const [dropDown, setDropDown] = useState(false);
   const {
     auth: { isAuth, token },
   } = useAuth();
   const { showToast } = useToast();
   const { userDataState, userDataDispatch, setCurrentVideo } = useUserData();
-  console.log(userDataState);
   const [isVideoLiked, setIsVideoLiked] = useState(
     checkVideoInLiked(_id, userDataState.likedVideos)
   );
@@ -48,6 +50,10 @@ const VideoCard = ({ video }) => {
     checkVideoInWatchLater(_id, userDataState.watchlater)
   );
   const [togglePlaylistModal, setTogglePlaylistModal] = useState(false);
+
+  const openSingleVideo = () => {
+    navigate(`/video/${_id}`);
+  };
 
   useEffect(() => {
     if (isAuth) {
@@ -63,7 +69,7 @@ const VideoCard = ({ video }) => {
 
     if (!isAuth) {
       showToast("error", "Login to add the video to your liked videos.");
-      navigate("/login", { state: { from: "/explore" }, replace: true });
+      navigate("/login", { state: { from: location }, replace: true });
     } else {
       isVideoLiked
         ? removeFromLiked(showToast, userDataDispatch, token, _id)
@@ -76,7 +82,7 @@ const VideoCard = ({ video }) => {
 
     if (!isAuth) {
       showToast("error", "Login to add the video to watch later.");
-      navigate("/login", { state: { from: "/explore" }, replace: true });
+      navigate("/login", { state: { from: location }, replace: true });
     } else {
       isVideoInWatchLater
         ? removeFromWatchLater(showToast, userDataDispatch, token, _id)
@@ -89,8 +95,13 @@ const VideoCard = ({ video }) => {
 
     if (!isAuth) {
       showToast("error", "Login to add videos to playlists.");
-      navigate("/login", { state: { from: "/explore" }, replace: true });
+      navigate("/login", { state: { from: location }, replace: true });
     } else setTogglePlaylistModal(true);
+  };
+
+  const removeFromHistoryHandler = (e) => {
+    e.preventDefault();
+    removeFromHistory(showToast, userDataDispatch, token, _id);
   };
 
   return (
@@ -99,7 +110,7 @@ const VideoCard = ({ video }) => {
         <PlaylistModal setTogglePlaylistModal={setTogglePlaylistModal} />
       ) : null}
       <div className="card card-vertical card-shadow" id={_id}>
-        <div className="p-3 img-badge-container">
+        <div className="p-3 img-badge-container" onClick={openSingleVideo}>
           <img
             src={thumbnail}
             alt="Video Thumbnail"
@@ -135,7 +146,7 @@ const VideoCard = ({ video }) => {
             >
               <MoreVertOutlinedIcon />
             </button>
-            {dropDown && (
+            {dropDown && location.pathname !== "/history" && (
               <div className="flex-row p-3 drop-down">
                 <div>
                   {isVideoInWatchLater ? (
@@ -153,7 +164,6 @@ const VideoCard = ({ video }) => {
                       Watch Later
                     </button>
                   )}
-
                   <button className="m-1" onClick={playlistHandler}>
                     <span className="mx-2">
                       <PlaylistAddIcon />
@@ -175,6 +185,22 @@ const VideoCard = ({ video }) => {
                       Add to Liked Videos
                     </button>
                   )}
+                </div>
+                <button className="m-1" onClick={() => setDropDown(false)}>
+                  <CloseIcon />
+                </button>
+              </div>
+            )}
+
+            {location.pathname === "/history" && dropDown && (
+              <div className="flex-row p-3 drop-down">
+                <div>
+                  <button className="m-1" onClick={removeFromHistoryHandler}>
+                    <span className="mx-2">
+                      <DeleteIcon />
+                    </span>
+                    Remove from history
+                  </button>
                 </div>
                 <button className="m-1" onClick={() => setDropDown(false)}>
                   <CloseIcon />

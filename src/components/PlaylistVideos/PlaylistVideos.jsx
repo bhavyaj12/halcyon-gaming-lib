@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import CloseIcon from "@mui/icons-material/Close";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from "@mui/icons-material/Delete";
 import { useToast } from "custom-hooks";
 import { useAuth, useUserData } from "contexts";
 import { removeFromPlaylist } from "utilities";
@@ -23,22 +24,30 @@ const PlaylistVideos = ({ video, playlistId }) => {
     auth: { token },
   } = useAuth();
   const { showToast } = useToast();
+  const navigate = useNavigate();
   const { userDataDispatch, setCurrentVideo, currentVideo } = useUserData();
 
-  const removeFromplaylistHandler = () => {
+  const openSingleVideo = () => {
+    navigate(`/video/${_id}`);
+  };
+
+  const removeFromPlaylistHandler = () => {
     removeFromPlaylist(
       showToast,
       userDataDispatch,
       token,
       playlistId,
-      currentVideo._id,
+      currentVideo._id
     );
   };
 
   return (
     <>
-      <div className="card card-vertical card-shadow" id={_id}>
-        <div className="p-3 img-badge-container">
+      <div
+        className="card card-vertical card-shadow"
+        id={_id}
+      >
+        <div className="p-3 img-badge-container" onClick={openSingleVideo}>
           <img
             src={thumbnail}
             alt="Video Thumbnail"
@@ -77,7 +86,7 @@ const PlaylistVideos = ({ video, playlistId }) => {
             {dropDown && (
               <div className="flex-row p-3 drop-down">
                 <div>
-                  <button className="m-1" onClick={removeFromplaylistHandler}>
+                  <button className="m-1" onClick={removeFromPlaylistHandler}>
                     <span className="mx-2">
                       <DeleteIcon />
                     </span>
