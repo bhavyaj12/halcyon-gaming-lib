@@ -10,7 +10,7 @@ const ExplorePage = () => {
 
   setTimeout(() => {
     setLoader(videosState.videosLoading);
-  }, 1500);
+  }, 1000);
   const loadingVideosMsg = (
     <div className="mt-4">
       <p className="alert alert-container alert-primary txt-normal">

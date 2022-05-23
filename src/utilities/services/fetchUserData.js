@@ -32,4 +32,19 @@ const getUserWatchLater = async (token, userDataDispatch) => {
   }
 };
 
-export { getUserLiked, getUserWatchLater };
+const getUserPlaylists = async (token, userDataDispatch) => {
+  const { showToast } = useToast();
+  try {
+    const {
+      data: { playlists },
+    } = await axios.get(`/api/user/playlists`, {
+      headers: { authorization: token },
+    });
+    userDataDispatch({ type: "SET_PLAYLISTS", payload: playlists });
+  } catch (error) {
+    console.log(error.message);
+    showToast("error", "Couldn't fetch user's playlists, try again later.");
+  }
+};
+
+export { getUserLiked, getUserWatchLater, getUserPlaylists };

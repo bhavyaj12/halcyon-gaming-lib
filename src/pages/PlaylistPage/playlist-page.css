@@ -1,0 +1,10 @@
+.create-new-playlist input {
+  padding: 10px;
+}
+
+.create-new-playlist button {
+  width: fit-content;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

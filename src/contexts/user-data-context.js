@@ -1,8 +1,8 @@
-import { createContext, useContext, useReducer, useEffect } from "react";
+import { createContext, useContext, useReducer, useEffect, useState } from "react";
 import { userDataReducer } from "reducers";
 import { useAuth } from "contexts";
-import { getUserLiked, getUserWatchLater } from "utilities";
-
+import { getUserLiked, getUserWatchLater, getUserPlaylists } from "utilities";
+ 
 const UserDataContext = createContext();
 
 const initUserData = {
@@ -10,9 +10,11 @@ const initUserData = {
   history: [],
   watchlater: [],
   playlists: [],
+  playlistModal: false,
 };
 
 const UserDataProvider = ({ children }) => {
+  const [currentVideo, setCurrentVideo] = useState({});
   const [userDataState, userDataDispatch] = useReducer(
     userDataReducer,
     initUserData
@@ -22,14 +24,22 @@ const UserDataProvider = ({ children }) => {
   } = useAuth();
 
   useEffect(() => {
-    if(isAuth) {
+    if (isAuth) {
       getUserLiked(token, userDataDispatch);
       getUserWatchLater(token, userDataDispatch);
+      getUserPlaylists(token, userDataDispatch);
     }
   }, [isAuth]);
 
   return (
-    <UserDataContext.Provider value={{ userDataState, userDataDispatch }}>
+    <UserDataContext.Provider
+      value={{
+        userDataState,
+        userDataDispatch,
+        currentVideo: currentVideo,
+        setCurrentVideo: setCurrentVideo,
+      }}
+    >
       {children}
     </UserDataContext.Provider>
   );

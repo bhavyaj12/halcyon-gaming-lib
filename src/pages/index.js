@@ -6,5 +6,18 @@ import HistoryPage from "./HistoryPage/HistoryPage";
 import ExplorePage from "./ExplorePage/ExplorePage";
 import LikedPage from "./LikedPage/LikedPage";
 import WatchLaterPage from "./WatchLaterPage/WatchLaterPage";
+import PlaylistPage from "./PlaylistPage/PlaylistPage";
+import SinglePlaylistPage from "./SinglePlaylistPage/SinglePlaylistPage";
 
-export { HomePage, InvalidPage, LoginPage, SignupPage, HistoryPage, ExplorePage, LikedPage, WatchLaterPage };
+export {
+  HomePage,
+  InvalidPage,
+  LoginPage,
+  SignupPage,
+  HistoryPage,
+  ExplorePage,
+  LikedPage,
+  WatchLaterPage,
+  PlaylistPage,
+  SinglePlaylistPage
+};
