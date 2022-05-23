@@ -8,7 +8,9 @@ import {
   HistoryPage,
   ExplorePage,
   LikedPage,
-  WatchLaterPage
+  WatchLaterPage,
+  PlaylistPage,
+  SinglePlaylistPage
 } from "pages";
 import PrivateRoutes from "./PrivateRoutes";
 import RedirectPage from "./RedirectPage";
@@ -27,7 +29,8 @@ const SiteRoutes = () => {
       {/* <Route path="/watch/:id" element={<Watch />} /> */}
       <Route element={<PrivateRoutes />}>
         <Route path="/history" element={<HistoryPage />} />
-        {/* <Route path="/playlists" element={<PlaylistsPage />} />*/}
+        <Route path="/playlists" element={<PlaylistPage />} />
+        <Route path="/playlists/:playlistId" element={<SinglePlaylistPage />} />
         <Route path="/watch-later" element={<WatchLaterPage />} />
         <Route path="/liked-videos" element={<LikedPage />} /> 
       </Route>

@@ -86,7 +86,8 @@ const NavigationTop = () => {
                 <div className="sidebar-links">
                   <li>
                     <NavLink
-                      to="/"
+                      to="/playlists"
+                      style={getActiveStyle}
                       className="button button-primary button-link"
                     >
                       Playlist
@@ -95,6 +96,7 @@ const NavigationTop = () => {
                   <li>
                     <NavLink
                       to="/liked-videos"
+                      style={getActiveStyle}
                       className="button button-primary button-link"
                     >
                       Liked
@@ -103,6 +105,7 @@ const NavigationTop = () => {
                   <li>
                     <NavLink
                       to="/watch-later"
+                      style={getActiveStyle}
                       className="button button-primary button-link"
                     >
                       Watch Later
