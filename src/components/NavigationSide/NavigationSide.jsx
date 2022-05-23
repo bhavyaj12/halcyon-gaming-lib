@@ -17,7 +17,7 @@ const NavigationSide = () => {
         <NavLink to="/playlists" style={getActiveStyleSide}><VideoLibraryOutlined />Playlist</NavLink>
         <NavLink to="/liked-videos" style={getActiveStyleSide}><FavoriteBorderOutlined />Liked</NavLink>
         <NavLink to="/watch-later" style={getActiveStyleSide}><WatchLaterOutlined />Watch Later</NavLink>
-        <NavLink to="/" style={getActiveStyleSide}><HistoryOutlined />History</NavLink>
+        <NavLink to="/history" style={getActiveStyleSide}><HistoryOutlined />History</NavLink>
       </div>
     </div>
   );

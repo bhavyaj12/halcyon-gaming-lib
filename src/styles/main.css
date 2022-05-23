@@ -32,6 +32,16 @@
   margin-bottom: 8rem;
 }
 
+@media screen and (max-width: 1000px) {
+  
+  .video-main-content {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 0px 1fr;
+    margin-bottom: 5rem;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .App {
     min-height: 100vh;
@@ -45,6 +55,6 @@
   }
 
   #video-main {
-    width: 100%;
+    width: 90%;
   }
 }

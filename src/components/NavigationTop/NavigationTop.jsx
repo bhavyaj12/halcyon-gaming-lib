@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { DarkMode, LightMode, Menu } from "@mui/icons-material";
 import { darkLogo, lightLogo } from "assets";
 import { useTheme, useAuth } from "contexts";
@@ -11,6 +11,7 @@ const NavigationTop = () => {
   const { theme, setTheme } = useTheme();
   const { auth, setAuth } = useAuth();
   const { showToast } = useToast();
+  const navigate = useNavigate();
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
   const signOutFunc = () => {
@@ -22,6 +23,7 @@ const NavigationTop = () => {
       user: {},
     });
     showToast("success", "Logged out.");
+    navigate("/", { replace: true });
   };
 
   const changeTheme = () =>
@@ -113,7 +115,7 @@ const NavigationTop = () => {
                   </li>
                   <li>
                     <NavLink
-                      to="/"
+                      to="/history"
                       className="button button-primary button-link"
                     >
                       History

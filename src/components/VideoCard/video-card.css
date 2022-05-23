@@ -32,6 +32,9 @@
 
 .video-container .card.card-vertical:hover {
   box-shadow: none;
+}
+
+.video-container .card.card-vertical .img-badge-container:hover {
   cursor: pointer;
 }
 

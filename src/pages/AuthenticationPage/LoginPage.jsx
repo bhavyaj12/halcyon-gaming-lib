@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "contexts";
 import { useToast } from "custom-hooks";
@@ -13,6 +13,9 @@ const LoginPage = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const { setAuth } = useAuth();
   const { showToast } = useToast();
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || -1;
   const [loginError, setLoginError] = useState("");
 
   const testLogin = {
@@ -37,6 +40,7 @@ const LoginPage = () => {
           user: { ...userDetails },
         });
         showToast("success", "Logged in successfully.");
+        navigate(from, { replace: true });
       } else {
         throw new Error("Login failed. Refresh and try again.");
       }

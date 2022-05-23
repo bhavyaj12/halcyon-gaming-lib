@@ -10,10 +10,10 @@ import {
   LikedPage,
   WatchLaterPage,
   PlaylistPage,
-  SinglePlaylistPage
+  SinglePlaylistPage,
+  SingleVideoPage,
 } from "pages";
 import PrivateRoutes from "./PrivateRoutes";
-import RedirectPage from "./RedirectPage";
 
 const SiteRoutes = () => {
   return (
@@ -21,18 +21,18 @@ const SiteRoutes = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="*" element={<InvalidPage />} />
       <Route path="/mockman" element={<Mockman />} />
-      <Route element={<RedirectPage />}>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-      </Route>
+
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
       <Route path="/explore" element={<ExplorePage />} />
-      {/* <Route path="/watch/:id" element={<Watch />} /> */}
+      <Route path="/video/:videoId" element={<SingleVideoPage />} />
+
       <Route element={<PrivateRoutes />}>
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/playlists" element={<PlaylistPage />} />
         <Route path="/playlists/:playlistId" element={<SinglePlaylistPage />} />
         <Route path="/watch-later" element={<WatchLaterPage />} />
-        <Route path="/liked-videos" element={<LikedPage />} /> 
+        <Route path="/liked-videos" element={<LikedPage />} />
       </Route>
     </Routes>
   );

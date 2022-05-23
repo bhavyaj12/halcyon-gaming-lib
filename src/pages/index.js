@@ -8,6 +8,7 @@ import LikedPage from "./LikedPage/LikedPage";
 import WatchLaterPage from "./WatchLaterPage/WatchLaterPage";
 import PlaylistPage from "./PlaylistPage/PlaylistPage";
 import SinglePlaylistPage from "./SinglePlaylistPage/SinglePlaylistPage";
+import SingleVideoPage from "./SingleVideoPage/SingleVideoPage";
 
 export {
   HomePage,
@@ -19,5 +20,6 @@ export {
   LikedPage,
   WatchLaterPage,
   PlaylistPage,
-  SinglePlaylistPage
+  SinglePlaylistPage,
+  SingleVideoPage
 };

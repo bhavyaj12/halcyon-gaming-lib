@@ -8,3 +8,12 @@
   border: none;
   cursor: pointer;
 }
+
+.create-new-playlist .button.btn-solid.button-primary {
+  background-color: var(--video-secondary-color);
+}
+
+.create-new-playlist .button.btn-solid.button-primary:hover {
+  background-color: var(--video-cta-color);
+  transition: 300ms ease;
+}

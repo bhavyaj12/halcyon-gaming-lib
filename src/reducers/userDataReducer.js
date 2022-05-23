@@ -29,6 +29,9 @@ const userDataReducer = (userDataState, { type, payload }) => {
     case "SET_PLAYLISTS":
       return { ...userDataState, playlists: payload };
 
+    case "UPDATE_HISTORY":
+      return { ...userDataState, historyVideos: payload };
+
     default:
       return userDataState;
   }

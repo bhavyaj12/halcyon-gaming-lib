@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { NavigationSide } from "components";
 import { VideoCard } from "components";
 import { useUserData } from "contexts";
@@ -25,9 +24,6 @@ const WatchLaterPage = () => {
                 <div className="alert alert-container alert-error">
                   You do not have any videos in watch later. Add to watch later
                   from the explore page.
-                  <Link to="/explore" className="button btn-solid button-secondary">
-                    Go to Explore
-                  </Link>
                 </div>
               </>
             )}

@@ -6,7 +6,12 @@ import { getActiveStyleSide } from "./getActiveStyleSide";
 import { fetchVideos } from "./services/fetchVideos";
 import { addToLiked, removeFromLiked } from "./services/videoLikeService";
 import { checkVideoInLiked } from "./checkVideoInLiked";
-import { getUserLiked, getUserWatchLater, getUserPlaylists } from "./services/fetchUserData";
+import {
+  getUserLiked,
+  getUserWatchLater,
+  getUserPlaylists,
+  getUserHistory
+} from "./services/fetchUserData";
 import {
   addToWatchLater,
   removeFromWatchLater,
@@ -16,8 +21,14 @@ import {
   addToPlaylist,
   removeFromPlaylist,
   addNewPlaylist,
-  deletePlaylist
+  deletePlaylist,
 } from "./services/videoPlaylistService";
+import { fetchSingleVideo } from "./services/fetchSingleVideo";
+import {
+  addToHistory,
+  removeFromHistory,
+  clearHistory,
+} from "./services/historyService";
 
 export {
   fetchCategories,
@@ -38,5 +49,10 @@ export {
   removeFromPlaylist,
   addNewPlaylist,
   deletePlaylist,
-  getUserPlaylists
+  getUserPlaylists,
+  fetchSingleVideo,
+  addToHistory,
+  removeFromHistory,
+  clearHistory,
+  getUserHistory
 };

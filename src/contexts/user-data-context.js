@@ -1,13 +1,24 @@
-import { createContext, useContext, useReducer, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useReducer,
+  useEffect,
+  useState,
+} from "react";
 import { userDataReducer } from "reducers";
 import { useAuth } from "contexts";
-import { getUserLiked, getUserWatchLater, getUserPlaylists } from "utilities";
- 
+import {
+  getUserLiked,
+  getUserWatchLater,
+  getUserPlaylists,
+  getUserHistory,
+} from "utilities";
+
 const UserDataContext = createContext();
 
 const initUserData = {
   likedVideos: [],
-  history: [],
+  historyVideos: [],
   watchlater: [],
   playlists: [],
   playlistModal: false,
@@ -28,6 +39,7 @@ const UserDataProvider = ({ children }) => {
       getUserLiked(token, userDataDispatch);
       getUserWatchLater(token, userDataDispatch);
       getUserPlaylists(token, userDataDispatch);
+      getUserHistory(token, userDataDispatch);
     }
   }, [isAuth]);
 

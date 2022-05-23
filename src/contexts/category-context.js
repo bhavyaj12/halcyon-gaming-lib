@@ -12,7 +12,6 @@ const CategoryProvider = ({ children }) => {
       const {
         data: { categories },
       } = await fetchCategories();
-      console.log(categories);
       setCategoryState({ categories: categories });
     } catch (error) {
       console.log(error.message);

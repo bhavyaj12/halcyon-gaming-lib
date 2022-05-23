@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "./home-carousel.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -25,7 +26,7 @@ const HomeCarousel = () => {
           <div key={banner.id}  className="carousel-show">
             <img alt="carousel image" src={banner.img} className="slider-img" />
             <div className="legend" id="legend">
-              <button className="button btn-solid button-primary">Watch Now</button>
+              <Link to="/explore" className="button btn-solid button-primary">Watch Now</Link>
             </div>
           </div>
         );

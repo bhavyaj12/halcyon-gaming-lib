@@ -3,7 +3,6 @@ import "./category-list.css";
 
 const CategoryList = () => {
   const { categoryState } = useCategory();
-  console.log(categoryState);
   return (
     <div className="categories-container mt-7">
       {categoryState.categories.map((category) => {

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { NavigationSide } from "components";
 import { VideoCard } from "components";
 import { useUserData } from "contexts";
@@ -24,9 +23,6 @@ const LikedPage = () => {
               <div className="alert alert-container alert-error">
                 You do not have any liked videos. Add to liked vidoes from the
                 explore page.
-                <Link to="/explore" className="button btn-solid button-secondary">
-                    Go to Explore
-                  </Link>
               </div>
             )}
           </div>

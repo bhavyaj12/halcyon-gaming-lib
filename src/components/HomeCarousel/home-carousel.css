@@ -13,7 +13,7 @@
     font-size: inherit;
 }
 
-.legend .button {
+.legend .button.btn-solid.button-primary {
     position: absolute;
     bottom: 0;
     background-color: var(--video-cta-color);
