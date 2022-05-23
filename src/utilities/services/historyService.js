@@ -16,7 +16,6 @@ const addToHistory = async (
         headers: { authorization: token },
       }
     );
-    console.log("history after adding video", history);
     userDataDispatch({ type: "UPDATE_HISTORY", payload: history });
   } catch (error) {
     console.log(error.message);
@@ -36,7 +35,6 @@ const removeFromHistory = async (
     } = await axios.delete(`/api/user/history/${videoId}`, {
       headers: { authorization: token },
     });
-    console.log("history after deleting video", history);
     userDataDispatch({ type: "UPDATE_HISTORY", payload: history });
   } catch (error) {
     console.log(error);
@@ -59,7 +57,6 @@ const clearHistory = async (
         headers: { authorization: token },
       }
     );
-    console.log("history after deleting all history", history);
     userDataDispatch({ type: "UPDATE_HISTORY", payload: history });
     showToast("success", "Cleared history successfully.");
   } catch (error) {

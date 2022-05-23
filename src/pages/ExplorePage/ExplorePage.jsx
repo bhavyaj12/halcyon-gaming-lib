@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { NavigationSide, CategoryFilter } from "components";
+import { NavigationSide } from "components";
 import { VideoCard } from "components";
 import { useVideos } from "contexts";
 import "./explore-page.css";
 
 const ExplorePage = () => {
-  const { videosState } = useVideos();
+  const { videosLoading, videos } = useVideos();
   const [loader, setLoader] = useState(true);
 
   setTimeout(() => {
-    setLoader(videosState.videosLoading);
+    setLoader(videosLoading);
   }, 1000);
   const loadingVideosMsg = (
     <div className="mt-4">
@@ -28,9 +28,8 @@ const ExplorePage = () => {
       ) : (
         <>
           <main className="video-grid-item" id="video-main">
-            <CategoryFilter />
             <section className="video-container">
-              {videosState.videos.map((video) => {
+              {videos.map((video) => {
                 return <VideoCard video={video} key={video._id} />;
               })}
             </section>

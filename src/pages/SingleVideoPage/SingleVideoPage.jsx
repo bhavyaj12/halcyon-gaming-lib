@@ -114,10 +114,6 @@ const SingleVideoPage = () => {
           />
           <p className="h3 single-video-title my-4">{singleVideo.title}</p>
           <div className="single-video-btns my-2">
-            {/* <button className="single-video-action">
-              <ThumbUpOutlinedIcon />
-              Like
-            </button> */}
             {isVideoLiked ? (
               <button
                 className="single-video-action"
@@ -139,10 +135,6 @@ const SingleVideoPage = () => {
                 Like
               </button>
             )}
-            {/* <button className="single-video-action mx-2">
-              <WatchLaterOutlined />
-              Watch later
-            </button> */}
             {isVideoInWatchLater ? (
               <button
                 className="single-video-action mx-2"
@@ -164,10 +156,6 @@ const SingleVideoPage = () => {
                 Watch Later
               </button>
             )}
-            {/* <button className="single-video-action">
-              <PlaylistAddIcon />
-              Add to playlist
-            </button> */}
             <button className="single-video-action" onClick={playlistHandler}>
               <span className="mx-2">
                 <PlaylistAddIcon />
