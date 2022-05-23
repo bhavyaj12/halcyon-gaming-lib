@@ -1,6 +1,22 @@
-import { NavigationSide } from "components";
+import { NavigationSide, VideoCard } from "components";
+import { useUserData, useAuth } from "contexts";
+import { useToast } from "custom-hooks";
+import { clearHistory } from "utilities";
 
 const HistoryPage = () => {
+  const {
+    auth: { token },
+  } = useAuth();
+  const {
+    userDataState: { historyVideos },
+    userDataDispatch,
+  } = useUserData();
+  const { showToast } = useToast();
+  const clearHistoryHandler = (e) => {
+    e.preventDefault();
+    clearHistory(showToast, token, userDataDispatch);
+  };
+
   return (
     <>
       <section className="video-main-content">
@@ -8,9 +24,28 @@ const HistoryPage = () => {
           <NavigationSide />
         </div>
         <main className="video-grid-item" id="video-main">
-          <div className="alert alert-container">
-            <h2 className="h2">This is History Page. It is a private route.</h2>
+          <div className="create-new-playlist flex-row my-3 pt-8">
+            <button
+              className="button btn-solid button-primary"
+              onClick={clearHistoryHandler}
+            >
+              X Clear History
+            </button>
           </div>
+          <section className="video-container">
+            <div className="flex">
+              {historyVideos.length > 0 ? (
+                historyVideos.map((video) => {
+                  return <VideoCard video={video} key={video._id} />;
+                })
+              ) : (
+                <div className="alert alert-container alert-error">
+                  You do not have any recorded history. Make sure to login and
+                  start watching a video to record history.
+                </div>
+              )}
+            </div>
+          </section>
         </main>
       </section>
     </>
