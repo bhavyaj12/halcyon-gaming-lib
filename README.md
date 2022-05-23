@@ -10,6 +10,10 @@ Halcyon Gaming is a modern video library that contains a great collection of gam
 
 
 
+https://user-images.githubusercontent.com/59730227/169915071-99d731d8-4971-4634-8583-d71d0daf9587.mp4
+
+
+
 ## Features
 - It is made using [Halcyon-UI](https://github.com/bhavyaj12/HalcyonUI)
 - This is a frontend video library project created using the mock backend [mockBee](https://github.com/neogcamp/mockBee).
@@ -30,6 +34,7 @@ Halcyon Gaming is a modern video library that contains a great collection of gam
 > - User can logout and new user can login
 
 - Explore Page
+> - Search functionality for explore page videos in navbar
 > - User can start exploring available videos without login, videos can also be watched without it.
 > - On the videos user can access more button which opens up options to add video to likes, Watch Later and playlist 
 > - Video can be added/removed from likes, watch later and playlist. Clicking on playlist opens up modal to add new playlists as well.
@@ -63,7 +68,6 @@ Halcyon Gaming is a modern video library that contains a great collection of gam
 > - On performing most critical operations, loaders and alerts are visible
 
 ## Features to be added (Work in Progress)
-- Search
 - Filtering by category 
 - Sorting videos
 - User Profile
