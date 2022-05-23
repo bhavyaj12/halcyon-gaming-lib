@@ -1,4 +1,4 @@
-<img src="src/assets/logos/light-theme-vid-logo.svg" width="250" height="auto">
+<img src="src/assets/logos/light-theme-vid-logo.svg" width="500" height="auto">
 
 # Halcyon Gaming Video Library
 
