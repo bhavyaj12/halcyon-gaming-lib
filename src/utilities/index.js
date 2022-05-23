@@ -7,8 +7,17 @@ import { fetchVideos } from "./services/fetchVideos";
 import { addToLiked, removeFromLiked } from "./services/videoLikeService";
 import { checkVideoInLiked } from "./checkVideoInLiked";
 import { getUserLiked, getUserWatchLater } from "./services/fetchUserData";
-import { addToWatchLater, removeFromWatchLater } from "./services/videoWatchLaterService";
+import {
+  addToWatchLater,
+  removeFromWatchLater,
+} from "./services/videoWatchLaterService";
 import { checkVideoInWatchLater } from "./checkVideoInWatchLater";
+import {
+  addToPlaylist,
+  removeFromPlaylist,
+  addNewPlaylist,
+  deletePlaylist
+} from "./services/videoPlaylistService";
 
 export {
   fetchCategories,
@@ -21,8 +30,12 @@ export {
   removeFromLiked,
   checkVideoInLiked,
   getUserLiked,
-  addToWatchLater, 
+  addToWatchLater,
   removeFromWatchLater,
   checkVideoInWatchLater,
-  getUserWatchLater
+  getUserWatchLater,
+  addToPlaylist,
+  removeFromPlaylist,
+  addNewPlaylist,
+  deletePlaylist
 };
