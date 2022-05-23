@@ -9,7 +9,6 @@ const getUserLiked = async (token, userDataDispatch) => {
     } = await axios.get(`/api/user/likes`, {
       headers: { authorization: token },
     });
-    console.log(likes);
     userDataDispatch({ type: "FETCH_LIKED_VIDEOS", payload: likes });
   } catch (error) {
     console.log(error.message);
@@ -47,4 +46,19 @@ const getUserPlaylists = async (token, userDataDispatch) => {
   }
 };
 
-export { getUserLiked, getUserWatchLater, getUserPlaylists };
+const getUserHistory = async (token, userDataDispatch) => {
+  const { showToast } = useToast();
+  try {
+    const {
+      data: { history },
+    } = await axios.get(`/api/user/history`, {
+      headers: { authorization: token },
+    });
+    userDataDispatch({ type: "UPDATE_HISTORY", payload: history });
+  } catch (error) {
+    console.log(error.message);
+    showToast("error", "Couldn't fetch user's history, try again later.");
+  }
+};
+
+export { getUserLiked, getUserWatchLater, getUserPlaylists, getUserHistory };
