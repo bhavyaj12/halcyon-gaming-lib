@@ -18,6 +18,17 @@ const userDataReducer = (userDataState, { type, payload }) => {
     case "UPDATE_WATCH_LATER":
       return { ...userDataState, watchlater: [...payload] };
 
+    case "UPDATE_PLAYLIST":
+      return {
+        ...userDataState,
+        playlists: userDataState.playlists.map((playlist) =>
+          playlist._id === payload._id ? payload : playlist
+        ),
+      };
+
+    case "SET_PLAYLISTS":
+      return { ...userDataState, playlists: payload };
+
     default:
       return userDataState;
   }
