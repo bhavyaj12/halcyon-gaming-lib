@@ -6,7 +6,7 @@ import "./home-page.css";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="py-8">
       <HomeCarousel />
       <div className="container-center">
         <h3 className="h3 pt-8">Categories</h3>

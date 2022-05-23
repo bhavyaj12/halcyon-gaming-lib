@@ -1,9 +1,10 @@
 #header {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.06);
   top: 0;
-  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 5;
-  position: sticky;
+  position: fixed;
 }
 
 .App.dark .store-nav-bar {
