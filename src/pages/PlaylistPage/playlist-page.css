@@ -18,6 +18,6 @@
   transition: 300ms ease;
 }
 
-.App.dark .create-new-playlist .add-playlist-page {
+.App.dark .create-new-playlist button.add-playlist-page {
   color: var(--theme-dark-font);
 }
