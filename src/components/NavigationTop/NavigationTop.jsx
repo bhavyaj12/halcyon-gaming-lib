@@ -36,9 +36,7 @@ const NavigationTop = () => {
   }, [theme]);
 
   useEffect(() => {
-    if(hamburgerOpen) {
-      setHamburgerOpen(false);
-    }
+    setHamburgerOpen(false);
   }, [location]);
 
   const handleSearchInput = (e) => {
