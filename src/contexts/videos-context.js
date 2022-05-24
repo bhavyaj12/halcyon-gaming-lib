@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 import { videosReducer } from "reducers";
-import { fetchVideos } from "utilities";
+import { fetchVideos, searchVideos } from "utilities";
 import { useToast } from "custom-hooks";
 
 const VideosContext = createContext();
@@ -8,6 +8,7 @@ const VideosContext = createContext();
 const initVideos = {
   videos: [],
   videosLoading: true,
+  searchQuery: "",
 };
 
 const { showToast } = useToast();
@@ -27,12 +28,16 @@ const VideosProvider = ({ children }) => {
     }
   };
 
+  const { videos, searchQuery, videosLoading } = videosState;
+
+  const getSearchResultVideos = searchVideos(videos, searchQuery);  
+
   useEffect(() => {
     getVideos();
   }, []);
 
   return (
-    <VideosContext.Provider value={{ videosState, videosDispatch }}>
+    <VideosContext.Provider value={{ videosLoading, searchQuery, videos: getSearchResultVideos, videosDispatch }}>
       {children}
     </VideosContext.Provider>
   );

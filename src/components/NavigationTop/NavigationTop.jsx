@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { DarkMode, LightMode, Menu } from "@mui/icons-material";
 import { darkLogo, lightLogo } from "assets";
-import { useTheme, useAuth } from "contexts";
+import { useTheme, useAuth, useVideos } from "contexts";
 import { useToast } from "custom-hooks";
-import { getActiveStyle } from "utilities";
+import { getActiveStyle, searchVideos } from "utilities";
 import "./navigation-top.css";
 
 const NavigationTop = () => {
   const { theme, setTheme } = useTheme();
   const { auth, setAuth } = useAuth();
   const { showToast } = useToast();
+  const { searchQuery, videosDispatch } = useVideos();
   const navigate = useNavigate();
+  const location = useLocation();
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
   const signOutFunc = () => {
@@ -32,6 +34,14 @@ const NavigationTop = () => {
   useEffect(() => {
     localStorage.setItem("halcyon-gaming-theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    setHamburgerOpen(false);
+  }, [location]);
+
+  const handleSearchInput = (e) => {
+    videosDispatch({ type: "SET_SEARCH_QUERY", payload: e.target.value });
+  };
 
   return (
     <header id="header">
@@ -57,12 +67,19 @@ const NavigationTop = () => {
           className={hamburgerOpen ? "store-nav hamburger-open" : "store-nav"}
         >
           <ul className="store-nav-links ul-no-decor display-flex">
-            <li className="search-bar">
-              <input type="search" placeholder="Search videos " />
-              <label className="search-bar-icon">
-                <span className="fas fa-search"></span>
-              </label>
-            </li>
+            {location.pathname === "/explore" && (
+              <li className="search-bar">
+                <input
+                  type="search"
+                  placeholder="Search videos..."
+                  value={searchQuery}
+                  onChange={handleSearchInput}
+                />
+                <label className="search-bar-icon">
+                  <span className="fas fa-search"></span>
+                </label>
+              </li>
+            )}
             <li>
               <NavLink
                 to="/"
@@ -73,7 +90,11 @@ const NavigationTop = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/explore" style={getActiveStyle} className="button button-primary button-link">
+              <NavLink
+                to="/explore"
+                style={getActiveStyle}
+                className="button button-primary button-link"
+              >
                 Explore
               </NavLink>
             </li>

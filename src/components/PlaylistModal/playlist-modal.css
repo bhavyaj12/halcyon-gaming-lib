@@ -20,6 +20,10 @@
   text-align: left;
 }
 
+.playlist-item label {
+  font-size: 1.3rem;
+}
+
 .playlist-modal-container .h4 {
   text-align: center;
 }
