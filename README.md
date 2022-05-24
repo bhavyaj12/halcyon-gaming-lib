@@ -4,15 +4,11 @@
 
 Halcyon Gaming is a modern video library that contains a great collection of gaming related videos, from tips and trailers to multi hour long walkthrough videos. Videos can be added to playlist, can be liked/disliked and added to watch later as well as history. It is a complete solution for all your game stream watching needs.
 
-[![Netlify Status]()
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1f549920-4940-4a41-a606-a12de73955f2/deploy-status)](https://app.netlify.com/sites/halcyon-gaming/deploys)
 
 ## Preview
 
-
-
-https://user-images.githubusercontent.com/59730227/169915071-99d731d8-4971-4634-8583-d71d0daf9587.mp4
-
-
+https://user-images.githubusercontent.com/59730227/169978770-bc09e52a-8f6b-4d8e-a0ac-e837f0b0cf06.mp4
 
 ## Features
 - It is made using [Halcyon-UI](https://github.com/bhavyaj12/HalcyonUI)
@@ -72,7 +68,7 @@ https://user-images.githubusercontent.com/59730227/169915071-99d731d8-4971-4634-
 - Sorting videos
 - User Profile
 
-## Features to improve the project
+## Features that will improve the project
 - Custom backend with database
 - Upload Video
 - Notes for the video
