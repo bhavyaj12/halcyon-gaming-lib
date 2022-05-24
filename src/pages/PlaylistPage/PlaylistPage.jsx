@@ -57,7 +57,7 @@ const PlaylistPage = () => {
             value={newPlaylist}
             onChange={(e) => setNewPlaylist(e.target.value)}
           />
-          <button className="mx-1" onClick={createPlaylistHandler}>
+          <button className="mx-1 add-playlist-page" onClick={createPlaylistHandler}>
             <AddIcon style={{ fontSize: 28 }} />
           </button>
         </div>

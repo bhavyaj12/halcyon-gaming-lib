@@ -17,3 +17,7 @@
   background-color: var(--video-cta-color);
   transition: 300ms ease;
 }
+
+.App.dark .create-new-playlist .add-playlist-page {
+  color: var(--theme-dark-font);
+}
