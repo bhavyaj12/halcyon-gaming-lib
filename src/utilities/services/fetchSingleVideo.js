@@ -10,7 +10,6 @@ const fetchSingleVideo = async (videoId, setSingleVideo) => {
     setSingleVideo(video);
   } catch (error) {
       showToast("error", "Can't fetch the video, try again later.")
-      console.log(error);
   }
 };
 

@@ -11,7 +11,6 @@ const getUserLiked = async (token, userDataDispatch) => {
     });
     userDataDispatch({ type: "FETCH_LIKED_VIDEOS", payload: likes });
   } catch (error) {
-    console.log(error.message);
     showToast("error", "Couldn't fetch user's liked videos, try again later.");
   }
 };
@@ -26,7 +25,6 @@ const getUserWatchLater = async (token, userDataDispatch) => {
     });
     userDataDispatch({ type: "FETCH_WATCH_LATER", payload: watchlater });
   } catch (error) {
-    console.log(error.message);
     showToast("error", "Couldn't fetch user's watch later videos, try again later.");
   }
 };
@@ -41,7 +39,6 @@ const getUserPlaylists = async (token, userDataDispatch) => {
     });
     userDataDispatch({ type: "SET_PLAYLISTS", payload: playlists });
   } catch (error) {
-    console.log(error.message);
     showToast("error", "Couldn't fetch user's playlists, try again later.");
   }
 };
@@ -56,7 +53,6 @@ const getUserHistory = async (token, userDataDispatch) => {
     });
     userDataDispatch({ type: "UPDATE_HISTORY", payload: history });
   } catch (error) {
-    console.log(error.message);
     showToast("error", "Couldn't fetch user's history, try again later.");
   }
 };

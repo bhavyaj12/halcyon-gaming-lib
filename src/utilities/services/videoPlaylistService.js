@@ -20,7 +20,6 @@ const addToPlaylist = async (
     userDataDispatch({ type: "UPDATE_PLAYLIST", payload: playlist });
     showToast("success", "Added video to playlist.");
   } catch (error) {
-    console.log(error.message);
     showToast("error", "Couldn't add video to playlist. Try again later.");
   }
 };
@@ -41,7 +40,6 @@ const removeFromPlaylist = async (
     userDataDispatch({ type: "UPDATE_PLAYLIST", payload: playlist });
     showToast("success", "Removed video from playlist.");
   } catch (error) {
-    console.log(error);
     showToast("error", "Couldn't remove video from playlist. Try again later.");
   }
 };
@@ -65,7 +63,6 @@ const addNewPlaylist = async (
     userDataDispatch({ type: "SET_PLAYLISTS", payload: playlists });
     showToast("success", "Added new playlist.");
   } catch (error) {
-    console.log(error);
     showToast("error", "Couldn't add a new playlist. Try again later.");
   }
 };
@@ -88,7 +85,6 @@ const deletePlaylist = async (
     userDataDispatch({ type: "SET_PLAYLISTS", payload: playlists });
     showToast("success", "Deleted playlist.");
   } catch (error) {
-    console.log(error);
     showToast("error", "Couldn't deleted playlist. Try again later.");
   }
 };
