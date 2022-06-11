@@ -17,20 +17,24 @@ const SinglePlaylistPage = () => {
         <NavigationSide />
       </div>
       <main className="video-grid-item" id="video-main">
-        <h3 className="h3 px-8 pt-8">Playlist: {playlist.title}</h3>
-        <section className="video-container">
-          <div className="flex">
-            {playlist.videos.map((video) => {
-              return (
-                <PlaylistVideos
-                  video={video}
-                  playlistId={playlist._id}
-                  key={playlist._id}
-                />
-              );
-            })}
-          </div>
-        </section>
+        {!playlist ? null : (
+          <>
+            <h3 className="h3 px-8 pt-8">Playlist: {playlist.title}</h3>
+            <section className="video-container">
+              <div className="flex-cards">
+                {playlist.videos.map((video) => {
+                  return (
+                    <PlaylistVideos
+                      video={video}
+                      playlistId={playlist._id}
+                      key={video._id}
+                    />
+                  );
+                })}
+              </div>
+            </section>
+          </>
+        )}
       </main>
     </section>
   );
