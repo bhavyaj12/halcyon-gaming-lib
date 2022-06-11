@@ -6,8 +6,11 @@
 - (src\pages\ExplorePage\ExplorePage.jsx): Lines 11 to 16: Added a cleanup in useEffect for memory leak
 - (src\App.js): Memoized the footer as its static, to prevent re-rendering on every page and route change.
 - (new file: src\components\SearchBar\SearchBar.jsx): Moved from NavTop to here, added debouncing in search
+- (src\components\CategoryFilter\CategoryFilter.jsx, src\contexts\videos-context.js, 
+src\pages\ExplorePage\explore-page.css, src\pages\ExplorePage\ExplorePage.jsx, src\reducers\videosReducer.js, src\utilities\filterVideos.js, src\utilities\index.js): Added Filter by category functionality
 
 ##### Minor Changes
+- Removed console.logs from every file
 - (new file: COMMENTS.md): Added comments.md
 - (new asset: public\assets\banner-2.jpg): Deleted previous 19Mb image banner-2, exchanged banner-1 and 2
 - (src\components\NavigationTop\NavigationTop.jsx): Line 149 signoutFn, Line 169 added class reset-btn-hover, Lines 87, 96, 155, 164: Added reset-btn-hover class, Deleted NavLink Account
