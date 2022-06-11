@@ -177,7 +177,7 @@ const SignupPage = () => {
           <p className="my-5 pswrd-match">Passwords don't match</p>
         )}
         <button
-          className="button button-primary btn-solid login-btn"
+          className="button button-primary btn-solid login-btn reset-btn-hover"
           disabled={user.password !== user.confirmPassword}
         >
           Sign Up

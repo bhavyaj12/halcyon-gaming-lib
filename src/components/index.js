@@ -9,6 +9,7 @@ import CategoryFilter from "./CategoryFilter/CategoryFilter";
 import PlaylistModal from "./PlaylistModal/PlaylistModal";
 import PlaylistCard from "./PlaylistCard/PlaylistCard";
 import PlaylistVideos from "./PlaylistVideos/PlaylistVideos";
+import SearchBar from "./SearchBar/SearchBar";
 
 export {
   NavigationTop,
@@ -21,5 +22,6 @@ export {
   CategoryFilter,
   PlaylistModal,
   PlaylistCard,
-  PlaylistVideos
+  PlaylistVideos,
+  SearchBar
 };

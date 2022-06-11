@@ -14,7 +14,7 @@ const LikedPage = () => {
       </div>
       <main className="video-grid-item" id="video-main">
         <section className="video-container">
-          <div className="flex">
+          <div className="flex-cards">
             {likedVideos.length > 0 ? (
               likedVideos.map((video) => {
                 return <VideoCard video={video} key={video._id} />;

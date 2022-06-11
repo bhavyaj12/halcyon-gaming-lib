@@ -30,6 +30,7 @@ import {
   clearHistory,
 } from "./services/historyService";
 import { searchVideos } from "./searchVideos";
+import { filterVideos } from "./filterVideos";
 
 export {
   fetchCategories,
@@ -56,5 +57,6 @@ export {
   removeFromHistory,
   clearHistory,
   getUserHistory,
-  searchVideos
+  searchVideos,
+  filterVideos
 };

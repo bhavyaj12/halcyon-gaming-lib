@@ -32,6 +32,12 @@
   margin: 6rem 0 8rem 0;
 }
 
+.flex-cards {
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -39,6 +45,11 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--video-cta-color);
+}
+
+button.button.reset-btn-hover:hover, a.button.reset-btn-hover:hover, .button.reset-btn-hover:hover {
+  transform: translate(0,0);
+  box-shadow: none;
 }
 
 @media screen and (max-width: 1000px) {

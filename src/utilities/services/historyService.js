@@ -18,7 +18,6 @@ const addToHistory = async (
     );
     userDataDispatch({ type: "UPDATE_HISTORY", payload: history });
   } catch (error) {
-    console.log(error.message);
     showToast("error", "Couldn't add video to history. Try again later.");
   }
 };
@@ -37,7 +36,6 @@ const removeFromHistory = async (
     });
     userDataDispatch({ type: "UPDATE_HISTORY", payload: history });
   } catch (error) {
-    console.log(error);
     showToast("error", "Couldn't remove video from history. Try again later.");
   }
 };
@@ -60,7 +58,6 @@ const clearHistory = async (
     userDataDispatch({ type: "UPDATE_HISTORY", payload: history });
     showToast("success", "Cleared history successfully.");
   } catch (error) {
-    console.log(error);
     showToast("error", "Couldn't clear history. Try again later.");
   }
 };

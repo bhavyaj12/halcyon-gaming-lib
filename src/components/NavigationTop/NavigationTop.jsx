@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { DarkMode, LightMode, Menu } from "@mui/icons-material";
 import { darkLogo, lightLogo } from "assets";
-import { useTheme, useAuth, useVideos } from "contexts";
+import { useTheme, useAuth } from "contexts";
 import { useToast } from "custom-hooks";
-import { getActiveStyle, searchVideos } from "utilities";
+import { getActiveStyle } from "utilities";
+import { SearchBar } from "components";
 import "./navigation-top.css";
 
 const NavigationTop = () => {
   const { theme, setTheme } = useTheme();
   const { auth, setAuth } = useAuth();
   const { showToast } = useToast();
-  const { searchQuery, videosDispatch } = useVideos();
   const navigate = useNavigate();
   const location = useLocation();
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
@@ -39,10 +39,6 @@ const NavigationTop = () => {
     setHamburgerOpen(false);
   }, [location]);
 
-  const handleSearchInput = (e) => {
-    videosDispatch({ type: "SET_SEARCH_QUERY", payload: e.target.value });
-  };
-
   return (
     <header id="header">
       <nav className="store-nav-bar">
@@ -67,24 +63,12 @@ const NavigationTop = () => {
           className={hamburgerOpen ? "store-nav hamburger-open" : "store-nav"}
         >
           <ul className="store-nav-links ul-no-decor display-flex">
-            {location.pathname === "/explore" && (
-              <li className="search-bar">
-                <input
-                  type="search"
-                  placeholder="Search videos..."
-                  value={searchQuery}
-                  onChange={handleSearchInput}
-                />
-                <label className="search-bar-icon">
-                  <span className="fas fa-search"></span>
-                </label>
-              </li>
-            )}
+            {location.pathname === "/explore" && <SearchBar />}
             <li>
               <NavLink
                 to="/"
                 style={getActiveStyle}
-                className="button button-primary button-link active"
+                className="button button-primary button-link active reset-btn-hover"
               >
                 Home
               </NavLink>
@@ -93,7 +77,7 @@ const NavigationTop = () => {
               <NavLink
                 to="/explore"
                 style={getActiveStyle}
-                className="button button-primary button-link"
+                className="button button-primary button-link reset-btn-hover"
               >
                 Explore
               </NavLink>
@@ -101,11 +85,6 @@ const NavigationTop = () => {
 
             {auth.isAuth === true ? (
               <>
-                <li>
-                  <NavLink to="/" className="button button-primary button-link">
-                    <i className="fas fa-user"></i>Account
-                  </NavLink>
-                </li>
                 <div className="sidebar-links">
                   <li>
                     <NavLink
@@ -144,10 +123,7 @@ const NavigationTop = () => {
                   </li>
                 </div>
                 <li>
-                  <button
-                    className="btn btn-logout"
-                    onClick={() => signOutFunc(setAuth)}
-                  >
+                  <button className="btn btn-logout" onClick={signOutFunc}>
                     Logout
                   </button>
                 </li>
@@ -157,7 +133,7 @@ const NavigationTop = () => {
                 <NavLink
                   to="/login"
                   style={getActiveStyle}
-                  className="button button-primary button-link"
+                  className="button button-primary button-link reset-btn-hover"
                 >
                   <i className="fas fa-user"></i>Login
                 </NavLink>
@@ -166,7 +142,7 @@ const NavigationTop = () => {
 
             <li>
               <button
-                className="button button-primary button-link theme-btn"
+                className="button button-primary button-link theme-btn reset-btn-hover"
                 onClick={changeTheme}
               >
                 {theme === "dark" ? <DarkMode /> : <LightMode />}

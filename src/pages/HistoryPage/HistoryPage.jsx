@@ -26,14 +26,14 @@ const HistoryPage = () => {
         <main className="video-grid-item" id="video-main">
           <div className="create-new-playlist flex-row my-3 pt-8">
             <button
-              className="button btn-solid button-primary"
+              className="button btn-solid button-primary reset-btn-hover"
               onClick={clearHistoryHandler}
             >
               X Clear History
             </button>
           </div>
           <section className="video-container">
-            <div className="flex">
+            <div className="flex-cards">
               {historyVideos.length > 0 ? (
                 historyVideos.map((video) => {
                   return <VideoCard video={video} key={video._id} />;
