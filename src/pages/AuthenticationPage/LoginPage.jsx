@@ -98,26 +98,15 @@ const LoginPage = () => {
             )}
           </button>
         </div>
-        <div className="forgot-pwd-row my-5">
-          <div className="remember-chkbox">
-            <input type="checkbox" name="remember-me" id="remember-me" />
-            <label htmlFor="remember-me" className="mx-2">
-              Remember Me
-            </label>
-          </div>
-          <button className="button button-primary button-link">
-            Forgot Password?
-          </button>
-        </div>
         <button
           type="submit"
-          className="button button-primary btn-solid login-btn"
+          className="button button-primary btn-solid login-btn reset-btn-hover"
         >
           Login
         </button>
         <button
           type="button"
-          className="button button-primary btn-solid login-btn"
+          className="button button-primary btn-solid login-btn reset-btn-hover"
           onClick={(e) => {
             e.preventDefault();
             testLoginHandler(testLogin);
