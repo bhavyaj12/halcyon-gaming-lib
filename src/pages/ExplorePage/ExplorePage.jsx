@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavigationSide } from "components";
 import { VideoCard } from "components";
 import { useVideos } from "contexts";
@@ -8,9 +8,16 @@ const ExplorePage = () => {
   const { videosLoading, videos } = useVideos();
   const [loader, setLoader] = useState(true);
 
+  useEffect(() => {
+    return () => {
+      setLoader(true);
+    };
+  }, []);
+
   setTimeout(() => {
-    setLoader(videosLoading);
+    if (!videosLoading) setLoader(videosLoading);
   }, 1000);
+
   const loadingVideosMsg = (
     <div className="mt-4">
       <p className="alert alert-container alert-primary txt-normal">
