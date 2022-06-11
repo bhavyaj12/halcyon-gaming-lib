@@ -26,14 +26,14 @@ const PlaylistCard = ({ playlist }) => {
     <>
       {playlist.videos.length === 0 ? (
         <>
-          <div className="playlist-container playlist-empty m-1">
+          <div className="playlist-container playlist-empty">
             <div
               className="playlist-img"
               onClick={() => openPlayListHandler(playlist._id)}
             >
               <CancelScheduleSendIcon style={{ fontSize: 50 }} />
             </div>
-            <p className="playlist-empty-title p-2">Playlist is empty</p>
+            <p className="playlist-empty-title">Playlist is empty</p>
             <p className="playlist-title-btns my-4 p-1">
               {playlist.title}
               <button
@@ -49,7 +49,6 @@ const PlaylistCard = ({ playlist }) => {
         </>
       ) : (
         <>
-          {" "}
           <div className="playlist-container">
             <div
               className="playlist-img"

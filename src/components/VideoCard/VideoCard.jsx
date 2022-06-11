@@ -138,7 +138,7 @@ const VideoCard = ({ video }) => {
               {category}
             </span>
             <button
-              className="button btn-solid button-primary"
+              className="button btn-solid button-primary reset-btn-hover"
               onClick={() => {
                 setDropDown(!dropDown);
                 setCurrentVideo(video);
