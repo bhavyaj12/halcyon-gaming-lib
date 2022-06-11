@@ -62,7 +62,7 @@ const PlaylistPage = () => {
           </button>
         </div>
         <section className="video-container">
-          <div className="flex">
+          <div className="flex-cards">
             {playlists.length > 0 ? (
               playlists.map((playlist) => {
                 return <PlaylistCard playlist={playlist} key={playlist._id} />;
