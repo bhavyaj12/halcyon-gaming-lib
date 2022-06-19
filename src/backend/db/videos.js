@@ -19,7 +19,7 @@ export const videos = [
     _id: "PdnMmcM-ttY",
     thumbnail: "https://i.ytimg.com/vi/PdnMmcM-ttY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBymETncI2_CMqKnMpPQPJ4jZHR7g",
     title: "Assassins Creed - Kassandra's Sacrifice (The Chosen One)",  
-    creatorAvatar: "https://yt3.ggpht.com/KWQTjjcbm3fY464c2kaLLa49kxQILJaflfXErf5daGEOvDZVbs0iez_7IcgXwRu0ZmI2NVsU3Q8=s88-c-k-c0x00ffffff-no-rj",
+    creatorAvatar: "https://yt3.ggpht.com/lQhP61b5heKdhtU83mpQYel78by0VF-9C5-vAPwm69FEYGlF0e_o3PpZVtIQb1odpg8GiDSo=s176-c-k-c0x00ffffff-no-rj",
     creator: "IRyxnzz",
     duration: "8:44",
     views: "3.4K",
