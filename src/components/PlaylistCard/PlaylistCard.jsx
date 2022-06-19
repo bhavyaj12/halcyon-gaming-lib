@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import CancelScheduleSendIcon from "@mui/icons-material/CancelScheduleSend";
-import DeleteIcon from "@mui/icons-material/Delete";
+import { CancelScheduleSendIcon, DeleteIcon } from "assets";
 import { deletePlaylist } from "utilities";
 import { useAuth, useUserData } from "contexts";
 import { useToast } from "custom-hooks";

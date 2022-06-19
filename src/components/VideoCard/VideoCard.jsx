@@ -1,13 +1,15 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
-import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
-import CloseIcon from "@mui/icons-material/Close";
-import DeleteIcon from "@mui/icons-material/Delete";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { WatchLaterOutlined } from "@mui/icons-material";
+import {
+  MoreVertOutlinedIcon,
+  PlaylistAddIcon,
+  ThumbUpIcon,
+  ThumbUpOutlinedIcon,
+  CheckCircleIcon,
+  CloseIcon,
+  DeleteIcon,
+  WatchLaterOutlined,
+} from "assets";
 import { useToast } from "custom-hooks";
 import { useAuth, useUserData } from "contexts";
 import { PlaylistModal } from "components";
@@ -150,7 +152,7 @@ const VideoCard = ({ video }) => {
               <div className="flex-row p-3 drop-down">
                 <div>
                   {isVideoInWatchLater ? (
-                    <button className="m-1" onClick={watchLaterHandler}>
+                    <button className="m-1 mt-3" onClick={watchLaterHandler}>
                       <span className="mx-2">
                         <CheckCircleIcon />
                       </span>
@@ -186,7 +188,10 @@ const VideoCard = ({ video }) => {
                     </button>
                   )}
                 </div>
-                <button className="m-1" onClick={() => setDropDown(false)}>
+                <button
+                  className="m-1 close-dropdown"
+                  onClick={() => setDropDown(false)}
+                >
                   <CloseIcon />
                 </button>
               </div>

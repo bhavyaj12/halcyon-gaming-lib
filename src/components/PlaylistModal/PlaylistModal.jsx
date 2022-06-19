@@ -1,6 +1,5 @@
 import { useState } from "react";
-import AddIcon from "@mui/icons-material/Add";
-import CloseIcon from "@mui/icons-material/Close";
+import { AddIcon, CloseIcon } from "assets";
 import { useUserData, useAuth } from "contexts";
 import { useToast } from "custom-hooks";
 import { addNewPlaylist, removeFromPlaylist, addToPlaylist } from "utilities";

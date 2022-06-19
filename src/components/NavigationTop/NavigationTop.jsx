@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
-import { DarkMode, LightMode, Menu } from "@mui/icons-material";
-import { darkLogo, lightLogo } from "assets";
+import { darkLogo, lightLogo, DarkMode, LightMode, Menu } from "assets";
 import { useTheme, useAuth } from "contexts";
 import { useToast } from "custom-hooks";
 import { getActiveStyle } from "utilities";

@@ -6,7 +6,7 @@ import {
 	FavoriteBorderOutlined,
 	WatchLaterOutlined,
 	HistoryOutlined,
-} from "@mui/icons-material";
+} from "assets";
 import "./navigation-side.css";
 
 const NavigationSide = () => {

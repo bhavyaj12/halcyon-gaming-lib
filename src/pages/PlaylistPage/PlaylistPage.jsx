@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddIcon from "@mui/icons-material/Add";
+import { AddIcon } from "assets";
 import { PlaylistCard, NavigationSide } from "components";
 import { useUserData, useAuth } from "contexts";
 import { useToast } from "custom-hooks";

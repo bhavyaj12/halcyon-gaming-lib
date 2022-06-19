@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
-import CloseIcon from "@mui/icons-material/Close";
-import DeleteIcon from "@mui/icons-material/Delete";
+import { MoreVertOutlinedIcon, CloseIcon, DeleteIcon } from "assets";
 import { useToast } from "custom-hooks";
 import { useAuth, useUserData } from "contexts";
 import { removeFromPlaylist } from "utilities";
@@ -43,10 +41,7 @@ const PlaylistVideos = ({ video, playlistId }) => {
 
   return (
     <>
-      <div
-        className="card card-vertical card-shadow"
-        id={_id}
-      >
+      <div className="card card-vertical card-shadow" id={_id}>
         <div className="p-3 img-badge-container" onClick={openSingleVideo}>
           <img
             src={thumbnail}

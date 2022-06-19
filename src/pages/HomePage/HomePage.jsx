@@ -1,12 +1,10 @@
 import { HomeCarousel, CategoryList } from "components";
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import { YouTubeIcon, SubscriptionsIcon, ThumbUpIcon } from "assets";
 import "./home-page.css";
 
 const HomePage = () => {
   return (
-    <div className="py-8">
+    <div className="py-8 landing-container">
       <HomeCarousel />
       <div className="container-center">
         <h3 className="h3 pt-8">Categories</h3>

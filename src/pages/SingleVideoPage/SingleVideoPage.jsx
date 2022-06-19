@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import ReactPlayer from "react-player/youtube";
 import { NavigationSide } from "components";
-import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { WatchLaterOutlined } from "@mui/icons-material";
+import {
+  PlaylistAddIcon,
+  ThumbUpIcon,
+  ThumbUpOutlinedIcon,
+  CheckCircleIcon,
+  WatchLaterOutlined,
+} from "assets";
 import { fetchSingleVideo } from "utilities";
 import { useToast } from "custom-hooks";
 import { useAuth, useUserData } from "contexts";
@@ -18,7 +20,7 @@ import {
   addToWatchLater,
   checkVideoInLiked,
   checkVideoInWatchLater,
-  addToHistory
+  addToHistory,
 } from "utilities";
 import "./single-video.css";
 
@@ -92,8 +94,8 @@ const SingleVideoPage = () => {
   const recordHistoryHandler = () => {
     if (isAuth) {
       addToHistory(showToast, userDataDispatch, token, singleVideo);
-    } 
-  }
+    }
+  };
 
   return (
     <>
@@ -105,13 +107,15 @@ const SingleVideoPage = () => {
           <NavigationSide />
         </div>
         <main className="video-grid-item m-5 p-2" id="video-main">
-          <ReactPlayer
-            url={`https://www.youtube.com/embed/${singleVideo._id}`}
-            controls={true}
-            height={"70vh"}
-            width={"80vw"}
-            onStart={recordHistoryHandler}
-          />
+          <div className="single-video-player">
+            <ReactPlayer
+              url={`https://www.youtube.com/embed/${singleVideo._id}`}
+              controls={true}
+              height={"100%"}
+              width={"100%"}
+              onStart={recordHistoryHandler}
+            />
+          </div>
           <p className="h3 single-video-title my-4">{singleVideo.title}</p>
           <div className="single-video-btns my-2">
             {isVideoLiked ? (
