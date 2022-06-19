@@ -21,8 +21,8 @@
 }
 
 .video-container .card.card-vertical .vt-card-text {
-    text-align: left;
-    margin: 0 1.5rem;
+  text-align: left;
+  margin: 0 1.5rem;
 }
 
 .App.dark .video-container .card.card-vertical {
@@ -90,6 +90,9 @@
   align-items: center;
   border-radius: 0.5rem;
   z-index: 8;
+  -webkit-box-shadow: 6px 10px 48px 10px rgba(0, 0, 0, 0.65);
+  -moz-box-shadow: 6px 10px 48px 10px rgba(0, 0, 0, 0.65);
+  box-shadow: 6px 10px 48px 10px rgba(0, 0, 0, 0.65);
 }
 
 .drop-down button {
@@ -103,4 +106,10 @@
 .drop-down button:hover {
   opacity: 0.7;
   cursor: pointer;
+}
+
+.close-dropdown {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

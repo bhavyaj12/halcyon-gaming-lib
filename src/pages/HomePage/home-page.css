@@ -8,6 +8,10 @@
     font-weight: bold;
 }
 
+.landing-container {
+    margin-top: 3.5rem
+}
+
 .App.dark .video-home-grid {
     background-color: var(--gray-txt);
 }

@@ -58,3 +58,55 @@
 .App.light div.button.button-primary.btn-outline.reset-catg:hover {
   background-color: var(--video-light-grey);
 }
+
+.mobile-filter-container {
+  margin-left: auto;
+  width: fit-content;
+}
+
+.mobile-filter-toggle {
+  border: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-filter-btns {
+  position: absolute;
+  z-index: 5;
+}
+
+.App.light .mobile-filter-btns {
+  background-color: var(--video-light-grey);
+}
+
+.App.dark .mobile-filter-btns {
+  background-color: var(--mobile-filter-bg);
+}
+
+.category-filter {
+  display: flex;
+  flex-direction: row;
+}
+
+.loader-container {
+  margin: auto;
+}
+
+.videos-loader {
+  width: 8rem;
+  height: auto;
+}
+
+@media screen and (min-width: 874px) {
+  .mobile-filter-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 874px) {
+  .category-filter {
+    display: none;
+  }
+}

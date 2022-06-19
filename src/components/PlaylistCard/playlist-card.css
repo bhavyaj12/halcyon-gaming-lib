@@ -79,3 +79,9 @@
 .App.dark .playlist-title-btns {
     color: var(--theme-light-font);
 }
+
+@media screen and (max-width: 875px) {
+    .playlist-container {
+        width: 20rem;
+    }
+}
