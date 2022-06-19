@@ -16,7 +16,7 @@ const CategoryFilter = () => {
   };
 
   return (
-    <div className="flex-row mx-5 mt-2 p-3">
+    <div className="mx-5 mt-2 p-3 category-filter">
       {categories.map(({ _id, categoryName }) => (
         <div
           key={_id}
