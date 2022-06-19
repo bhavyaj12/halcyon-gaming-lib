@@ -10,6 +10,7 @@ import PlaylistModal from "./PlaylistModal/PlaylistModal";
 import PlaylistCard from "./PlaylistCard/PlaylistCard";
 import PlaylistVideos from "./PlaylistVideos/PlaylistVideos";
 import SearchBar from "./SearchBar/SearchBar";
+import MobileFilter from "./CategoryFilter/MobileFilter";
 
 export {
   NavigationTop,
@@ -23,5 +24,6 @@ export {
   PlaylistModal,
   PlaylistCard,
   PlaylistVideos,
-  SearchBar
+  SearchBar,
+  MobileFilter
 };
