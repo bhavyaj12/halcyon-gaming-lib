@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { NavigationSide } from "components";
-import { VideoCard, CategoryFilter } from "components";
+import { Loader } from "assets";
+import { VideoCard, CategoryFilter, MobileFilter } from "components";
 import { useVideos } from "contexts";
 import "./explore-page.css";
 
 const ExplorePage = () => {
-  const { videosLoading, videos } =
-    useVideos();
+  const { videosLoading, videos } = useVideos();
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
@@ -20,10 +20,8 @@ const ExplorePage = () => {
   }, 1000);
 
   const loadingVideosMsg = (
-    <div className="mt-4">
-      <p className="alert alert-container alert-primary txt-normal">
-        Loading Videos...
-      </p>
+    <div className="mt-6 loader-container">
+        <img src={Loader} alt="Loading Videos" className="videos-loader"/>
     </div>
   );
   return (
@@ -37,6 +35,7 @@ const ExplorePage = () => {
         <>
           <main className="video-grid-item" id="video-main">
             <CategoryFilter />
+            <MobileFilter />
             <section className="video-container">
               {videos.map((video) => {
                 return <VideoCard video={video} key={video._id} />;
