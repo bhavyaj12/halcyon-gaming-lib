@@ -19,7 +19,7 @@ const SinglePlaylistPage = () => {
       <main className="video-grid-item" id="video-main">
         {!playlist ? null : (
           <>
-            <h3 className="h3 px-8 pt-8">Playlist: {playlist.title}</h3>
+            <h3 className="h3 px-8 pt-8 text-center">Playlist: {playlist.title}</h3>
             <section className="video-container">
               <div className="flex-cards">
                 {playlist.videos.map((video) => {

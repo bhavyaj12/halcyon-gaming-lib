@@ -13,6 +13,7 @@ const LikedPage = () => {
         <NavigationSide />
       </div>
       <main className="video-grid-item" id="video-main">
+        <h5 className="h5 px-8 pt-8 text-center">Liked Videos: {likedVideos?.length}</h5>
         <section className="video-container">
           <div className="flex-cards">
             {likedVideos.length > 0 ? (
