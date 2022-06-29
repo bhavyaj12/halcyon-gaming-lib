@@ -1,3 +1,20 @@
+### Changes made on (20/06)
+
+#### Directly in dev branch
+
+##### Major Changes
+- [Commit in multiple files to make more responsive](https://github.com/bhavyaj12/halcyon-gaming-lib/commit/634fe1ce9f8a9188917a60594460723f68d8bbda)
+- [Commit to add loader GIF](https://github.com/bhavyaj12/halcyon-gaming-lib/commit/ea5f9707965ff6c64eaf7a89ace8138dc01ae324)
+- [Commit to add loader in explore videos page](https://github.com/bhavyaj12/halcyon-gaming-lib/commit/e03b8e8ae16d1dcde7c4ab02f19226267c0fdca3)
+- [Commit to add common icons import export](https://github.com/bhavyaj12/halcyon-gaming-lib/commit/9501cf63218d94050373c44e44b60234786409ef)
+- [Commits in multiple files to import icons from assets](https://github.com/bhavyaj12/halcyon-gaming-lib/commit/31eb7ac601564fe1c959e9e91753490797742268)
+- [Commit to add mobile category filter](https://github.com/bhavyaj12/halcyon-gaming-lib/commit/7b613321a799bb0d503be9bb9edd60939a2134ad)
+##### Minor Changes
+- Updated COMMENTS.md
+- [Commit to add missing youtuber avatar](https://github.com/bhavyaj12/halcyon-gaming-lib/commit/80155ca04ebac864772adc9422cf4e3357a2e625)
+- [Commit to modify toast](https://github.com/bhavyaj12/halcyon-gaming-lib/commit/62845f484a2051ea5c49f75ac3824675aa51cc90)
+- [Commit to add some headings](https://github.com/bhavyaj12/halcyon-gaming-lib/commit/347e4fb3bb9cf77940a0c64651a2a7a4be696405)
+
 ### Changes made on (11/06)
 
 #### In merging pull request #10 - temp-dev
