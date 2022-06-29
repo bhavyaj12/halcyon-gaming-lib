@@ -106,6 +106,10 @@ const VideoCard = ({ video }) => {
     removeFromHistory(showToast, userDataDispatch, token, _id);
   };
 
+  setTimeout(() => {
+    if (dropDown) setDropDown(false);
+  }, 5000);
+
   return (
     <>
       {togglePlaylistModal ? (

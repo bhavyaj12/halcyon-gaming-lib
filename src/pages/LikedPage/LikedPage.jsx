@@ -13,21 +13,28 @@ const LikedPage = () => {
         <NavigationSide />
       </div>
       <main className="video-grid-item" id="video-main">
-        <h5 className="h5 px-8 pt-8 text-center">Liked Videos: {likedVideos?.length}</h5>
-        <section className="video-container">
-          <div className="flex-cards">
-            {likedVideos.length > 0 ? (
-              likedVideos.map((video) => {
-                return <VideoCard video={video} key={video._id} />;
-              })
-            ) : (
-              <div className="alert alert-container alert-error">
-                You do not have any liked videos. Add to liked vidoes from the
-                explore page.
-              </div>
-            )}
+        <h5 className="h5 px-8 pt-8 text-center">
+          Liked Videos: {likedVideos?.length}
+        </h5>
+
+        {likedVideos.length > 0 ? (
+          likedVideos.map((video) => {
+            return (
+              <section className="video-container">
+                <div className="flex-cards">
+                  <VideoCard video={video} key={video._id} />
+                </div>
+              </section>
+            );
+          })
+        ) : (
+          <div className="container-center">
+            <div className="alert alert-container alert-error">
+              You do not have any liked videos. Add to liked vidoes from the
+              explore page.
+            </div>
           </div>
-        </section>
+        )}
       </main>
     </section>
   );

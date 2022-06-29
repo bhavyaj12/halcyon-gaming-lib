@@ -57,26 +57,32 @@ const PlaylistPage = () => {
             value={newPlaylist}
             onChange={(e) => setNewPlaylist(e.target.value)}
           />
-          <button className="mx-1 add-playlist-page" onClick={createPlaylistHandler}>
+          <button
+            className="mx-1 add-playlist-page"
+            onClick={createPlaylistHandler}
+          >
             <AddIcon style={{ fontSize: 28 }} />
           </button>
         </div>
-        <section className="video-container">
-          <div className="flex-cards">
-            {playlists.length > 0 ? (
-              playlists.map((playlist) => {
-                return <PlaylistCard playlist={playlist} key={playlist._id} />;
-              })
-            ) : (
-              <>
-                <div className="alert alert-container alert-error">
-                  You do not have any playlists. Create new playlists above or
-                  from the explore page.
+
+        {playlists.length > 0 ? (
+          playlists.map((playlist) => {
+            return (
+              <section className="video-container">
+                <div className="flex-cards">
+                  <PlaylistCard playlist={playlist} key={playlist._id} />
                 </div>
-              </>
-            )}
+              </section>
+            );
+          })
+        ) : (
+          <div className="container-center">
+            <div className="alert alert-container alert-error">
+              You do not have any playlists. Create new playlists above or from
+              the explore page.
+            </div>
           </div>
-        </section>
+        )}
       </main>
     </section>
   );

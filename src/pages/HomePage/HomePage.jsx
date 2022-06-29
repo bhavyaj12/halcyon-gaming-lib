@@ -7,7 +7,7 @@ const HomePage = () => {
     <div className="py-8 landing-container">
       <HomeCarousel />
       <div className="container-center">
-        <h3 className="h3 pt-8">Categories</h3>
+        <h3 className="h3 pt-8">Video Categories</h3>
       </div>
       <CategoryList />
       <section className="video-home-grid my-8">

@@ -50,10 +50,6 @@ const SignupPage = () => {
   return (
     <main className="form-container">
       <h4 className="h4">SIGN UP</h4>
-      <p className="my-5">
-        Signing Up will give you access to special discounts right in your email
-        inbox!
-      </p>
       <form
         className="flex-col"
         onSubmit={(e) => {
@@ -163,14 +159,6 @@ const SignupPage = () => {
                 <i className="fa fa-eye"></i>
               )}
             </button>
-          </div>
-        </div>
-        <div className="forgot-pwd-row my-5">
-          <div className="remember-chkbox">
-            <input type="checkbox" id="accept-conditions" required />
-            <label htmlFor="accept-conditions" className="mx-2">
-              I accept the terms and conditions.
-            </label>
           </div>
         </div>
         {user.password !== user.confirmPassword && (

@@ -32,20 +32,25 @@ const HistoryPage = () => {
               X Clear History
             </button>
           </div>
-          <section className="video-container">
-            <div className="flex-cards">
-              {historyVideos.length > 0 ? (
-                historyVideos.map((video) => {
-                  return <VideoCard video={video} key={video._id} />;
-                })
-              ) : (
-                <div className="alert alert-container alert-error">
-                  You do not have any recorded history. Make sure to login and
-                  start watching a video to record history.
-                </div>
-              )}
+
+          {historyVideos.length > 0 ? (
+            historyVideos.map((video) => {
+              return (
+                <section className="video-container">
+                  <div className="flex-cards">
+                    <VideoCard video={video} key={video._id} />
+                  </div>
+                </section>
+              );
+            })
+          ) : (
+            <div className="container-center">
+              <div className="alert alert-container alert-error">
+                You do not have any recorded history. Make sure to login and
+                start watching a video to record history.
+              </div>
             </div>
-          </section>
+          )}
         </main>
       </section>
     </>
