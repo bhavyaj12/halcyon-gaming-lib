@@ -19,9 +19,11 @@ const SinglePlaylistPage = () => {
       <main className="video-grid-item" id="video-main">
         {!playlist ? null : (
           <>
-            <h3 className="h3 px-8 pt-8 text-center">Playlist: {playlist.title}</h3>
-            <section className="video-container">
-              <div className="flex-cards">
+            <h3 className="h3 px-8 pt-8 text-center">
+              Playlist: {playlist.title}
+            </h3>
+            {playlist.videos.length > 0 ? (
+              <section className="video-container">
                 {playlist.videos.map((video) => {
                   return (
                     <PlaylistVideos
@@ -31,8 +33,14 @@ const SinglePlaylistPage = () => {
                     />
                   );
                 })}
+              </section>
+            ) : (
+              <div className="container-center">
+                <div className="alert alert-container alert-error">
+                  You do not have any videos in this playlist. Add from Explore Page.
+                </div>
               </div>
-            </section>
+            )}
           </>
         )}
       </main>

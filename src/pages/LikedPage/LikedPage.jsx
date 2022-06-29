@@ -18,15 +18,11 @@ const LikedPage = () => {
         </h5>
 
         {likedVideos.length > 0 ? (
-          likedVideos.map((video) => {
-            return (
-              <section className="video-container">
-                <div className="flex-cards">
-                  <VideoCard video={video} key={video._id} />
-                </div>
-              </section>
-            );
-          })
+          <section className="video-container">
+            {likedVideos.map((video) => {
+              return <VideoCard video={video} key={video._id} />;
+            })}
+          </section>
         ) : (
           <div className="container-center">
             <div className="alert alert-container alert-error">

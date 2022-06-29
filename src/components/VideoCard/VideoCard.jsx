@@ -66,6 +66,12 @@ const VideoCard = ({ video }) => {
     }
   }, [userDataState]);
 
+  useEffect(() => {
+    return () => {
+      setDropDown(false);
+    };
+  }, []);
+
   const likeClickHandler = (e) => {
     e.preventDefault();
 

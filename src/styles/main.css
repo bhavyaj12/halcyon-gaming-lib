@@ -76,4 +76,9 @@ button.button.reset-btn-hover:hover, a.button.reset-btn-hover:hover, .button.res
   #video-main {
     width: 100%;
   }
+
+  .flex-cards {
+    justify-content: center;
+    align-items: center;
+  }
 }

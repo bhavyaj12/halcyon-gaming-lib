@@ -66,15 +66,11 @@ const PlaylistPage = () => {
         </div>
 
         {playlists.length > 0 ? (
-          playlists.map((playlist) => {
-            return (
-              <section className="video-container">
-                <div className="flex-cards">
-                  <PlaylistCard playlist={playlist} key={playlist._id} />
-                </div>
-              </section>
-            );
-          })
+          <section className="flex-cards">
+            {playlists.map((playlist) => {
+              return <PlaylistCard playlist={playlist} key={playlist._id} />;
+            })}
+          </section>
         ) : (
           <div className="container-center">
             <div className="alert alert-container alert-error">
